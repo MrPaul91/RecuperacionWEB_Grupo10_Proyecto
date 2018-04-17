@@ -16,7 +16,8 @@
 #################################################################
 
 ###  http://dbpedia.org/ontology/Partner
-dbo:Partner rdf:type owl:ObjectProperty ;
+dbo:Partner rdf:type owl:ObjectProperty ,
+                     owl:SymmetricProperty ;
             rdfs:domain dbo:Person ;
             rdfs:range dbo:Person .
 
@@ -32,15 +33,20 @@ dbo:father rdf:type owl:ObjectProperty ;
 
 ###  http://dbpedia.org/ontology/mother
 dbo:mother rdf:type owl:ObjectProperty ;
-           rdfs:subPropertyOf dbo:parent .
+           rdfs:subPropertyOf dbo:parent ;
+           rdf:type owl:AsymmetricProperty .
 
 
 ###  http://dbpedia.org/ontology/parent
-dbo:parent rdf:type owl:ObjectProperty .
+dbo:parent rdf:type owl:ObjectProperty ;
+           rdfs:domain dbo:Person ;
+           rdfs:range dbo:Person .
 
 
 ###  http://www.entrega1/ontologies/canDoTask
-:canDoTask rdf:type owl:ObjectProperty .
+:canDoTask rdf:type owl:ObjectProperty ;
+           rdfs:domain dbo:Person ;
+           rdfs:range dbo:Task .
 
 
 ###  http://www.entrega1/ontologies/hasJobPosition
@@ -50,7 +56,10 @@ dbo:parent rdf:type owl:ObjectProperty .
 
 
 ###  http://www.entrega1/ontologies/hasSkill
-:hasSkill rdf:type owl:ObjectProperty .
+:hasSkill rdf:type owl:ObjectProperty ;
+          owl:inverseOf :isSkillOf ;
+          rdfs:domain dbo:Person ;
+          rdfs:range dbo:Skill .
 
 
 ###  http://www.entrega1/ontologies/hasTask
@@ -60,17 +69,23 @@ dbo:parent rdf:type owl:ObjectProperty .
          rdfs:range :Task .
 
 
-###  http://www.entrega1/ontologies/isEmployeOf
-:isEmployeOf rdf:type owl:ObjectProperty ;
-             owl:inverseOf :isEmployedBy .
-
-
 ###  http://www.entrega1/ontologies/isEmployedBy
-:isEmployedBy rdf:type owl:ObjectProperty .
+:isEmployedBy rdf:type owl:ObjectProperty ;
+              owl:inverseOf :isEmployerOf ;
+              rdfs:domain dbo:Person ;
+              rdfs:range dbo:Company .
+
+
+###  http://www.entrega1/ontologies/isEmployerOf
+:isEmployerOf rdf:type owl:ObjectProperty ;
+              rdfs:domain dbo:Company ;
+              rdfs:range dbo:Person .
 
 
 ###  http://www.entrega1/ontologies/isSkillOf
-:isSkillOf rdf:type owl:ObjectProperty .
+:isSkillOf rdf:type owl:ObjectProperty ;
+           rdfs:domain dbo:Skill ;
+           rdfs:range dbo:Person .
 
 
 ###  http://www.entrega1/ontologies/isTaskOf
@@ -89,6 +104,20 @@ dbo:parent rdf:type owl:ObjectProperty .
 #    Data properties
 #################################################################
 
+###  http://dbpedia.org/ontology/Age
+dbo:Age rdf:type owl:DatatypeProperty ,
+                 owl:FunctionalProperty ;
+        rdfs:domain dbo:Person ;
+        rdfs:range xsd:integer .
+
+
+###  http://dbpedia.org/ontology/address
+dbo:address rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf owl:topDataProperty ;
+            rdfs:domain dbo:Company ;
+            rdfs:range xsd:string .
+
+
 ###  http://dbpedia.org/ontology/almaMater
 dbo:almaMater rdf:type owl:DatatypeProperty ;
               rdfs:domain dbo:Person ;
@@ -103,6 +132,7 @@ dbo:awardName rdf:type owl:DatatypeProperty ;
 
 ###  http://dbpedia.org/ontology/birthDate
 dbo:birthDate rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty ;
               rdfs:domain dbo:Person ;
               rdfs:range xsd:dateTime .
 
@@ -142,7 +172,9 @@ dbo:deathYear rdf:type owl:DatatypeProperty .
 
 
 ###  http://dbpedia.org/ontology/diploma
-dbo:diploma rdf:type owl:DatatypeProperty .
+dbo:diploma rdf:type owl:DatatypeProperty ;
+            rdfs:domain dbo:Person ;
+            rdfs:range xsd:string .
 
 
 ###  http://dbpedia.org/ontology/employer
@@ -163,6 +195,12 @@ dbo:livingPlace rdf:type owl:DatatypeProperty .
 
 ###  http://dbpedia.org/ontology/mother
 dbo:mother rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/name
+dbo:name rdf:type owl:DatatypeProperty ;
+         rdfs:domain dbo:Company ;
+         rdfs:range xsd:string .
 
 
 ###  http://dbpedia.org/ontology/patent
@@ -196,6 +234,16 @@ dbo:sex rdf:type owl:DatatypeProperty ;
                                             rdfs:range xsd:float .
 
 
+###  http://purl.org/dc/terms/description
+<http://purl.org/dc/terms/description> rdf:type owl:DatatypeProperty .
+
+
+###  http://www.entrega1/ontologies/hasSector
+:hasSector rdf:type owl:DatatypeProperty ;
+           rdfs:domain dbo:Company ;
+           rdfs:range xsd:string .
+
+
 ###  http://www.entrega1/ontologies/taskItem
 :taskItem rdf:type owl:DatatypeProperty ;
           rdfs:domain :Task ;
@@ -218,12 +266,20 @@ dbo:Company rdf:type owl:Class .
 
 ###  http://dbpedia.org/ontology/Person
 dbo:Person rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty :canDoTask ;
+                             owl:allValuesFrom dbo:Task
+                           ] ;
            owl:disjointWith :Competence .
 
 
 ###  http://dbpedia.org/ontology/Skill
 dbo:Skill rdf:type owl:Class ;
-          owl:equivalentClass :Competence .
+          owl:equivalentClass :Competence ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty :hasTask ;
+                            owl:someValuesFrom :Task
+                          ] .
 
 
 ###  http://dbpedia.org/ontology/Task
@@ -236,12 +292,34 @@ dbo:Task rdf:type owl:Class ;
             owl:disjointWith :Task .
 
 
+###  http://www.entrega1/ontologies/PersonWithJob
+:PersonWithJob rdf:type owl:Class ;
+               rdfs:subClassOf [ owl:intersectionOf ( dbo:Person
+                                                      [ rdf:type owl:Class ;
+                                                        owl:complementOf :PersonWithoutJob
+                                                      ]
+                                                    ) ;
+                                 rdf:type owl:Class
+                               ] ;
+               owl:disjointWith :PersonWithoutJob .
+
+
+###  http://www.entrega1/ontologies/PersonWithoutJob
+:PersonWithoutJob rdf:type owl:Class ;
+                  rdfs:subClassOf dbo:Person .
+
+
 ###  http://www.entrega1/ontologies/Task
 :Task rdf:type owl:Class .
 
 
 ###  http://www.entrega1/ontologies/jobPosition
-:jobPosition rdf:type owl:Class .
+:jobPosition rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty :needsCompetence ;
+                               owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                               owl:onClass :Competence
+                             ] .
 
 
 #################################################################
