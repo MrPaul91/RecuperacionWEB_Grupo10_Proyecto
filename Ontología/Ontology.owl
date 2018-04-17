@@ -10,7 +10,7 @@
 @base <http://www.entrega1/ontologies/> .
 
 
-xd
+
 
 <http://www.entrega1/ontologies/> rdf:type owl:Ontology .
 
