@@ -9,6 +9,9 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @base <http://www.entrega1/ontologies/> .
 
+
+xd
+
 <http://www.entrega1/ontologies/> rdf:type owl:Ontology .
 
 #################################################################
