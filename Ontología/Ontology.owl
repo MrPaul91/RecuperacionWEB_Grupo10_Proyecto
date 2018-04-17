@@ -1,0 +1,227 @@
+@prefix : <http://www.entrega1/ontologies/> .
+@prefix dbo: <http://dbpedia.org/ontology/> .
+@prefix dbr: <http://dbpedia.org/resource/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix foaf: <http://xmlns.com/foaf/spec/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.entrega1/ontologies/> .
+
+<http://www.entrega1/ontologies/> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://dbpedia.org/ontology/Partner
+dbo:Partner rdf:type owl:ObjectProperty ;
+            rdfs:domain dbo:Person ;
+            rdfs:range dbo:Person .
+
+
+###  http://dbpedia.org/ontology/father
+dbo:father rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf dbo:parent ;
+           rdf:type owl:AsymmetricProperty ;
+           rdfs:domain dbo:Person ;
+           rdfs:range dbo:Person ;
+           owl:propertyDisjointWith dbo:mother .
+
+
+###  http://dbpedia.org/ontology/mother
+dbo:mother rdf:type owl:ObjectProperty ;
+           rdfs:subPropertyOf dbo:parent .
+
+
+###  http://dbpedia.org/ontology/parent
+dbo:parent rdf:type owl:ObjectProperty .
+
+
+###  http://www.entrega1/ontologies/canDoTask
+:canDoTask rdf:type owl:ObjectProperty .
+
+
+###  http://www.entrega1/ontologies/hasSkill
+:hasSkill rdf:type owl:ObjectProperty .
+
+
+###  http://www.entrega1/ontologies/hasTask
+:hasTask rdf:type owl:ObjectProperty ;
+         owl:inverseOf :isTaskOf ;
+         rdfs:domain :Competence ;
+         rdfs:range :Task .
+
+
+###  http://www.entrega1/ontologies/isEmployeOf
+:isEmployeOf rdf:type owl:ObjectProperty ;
+             owl:inverseOf :isEmployedBy .
+
+
+###  http://www.entrega1/ontologies/isEmployedBy
+:isEmployedBy rdf:type owl:ObjectProperty .
+
+
+###  http://www.entrega1/ontologies/isSkillOf
+:isSkillOf rdf:type owl:ObjectProperty .
+
+
+###  http://www.entrega1/ontologies/isTaskOf
+:isTaskOf rdf:type owl:ObjectProperty ;
+          rdfs:domain :Task ;
+          rdfs:range dbo:Skill .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://dbpedia.org/ontology/almaMater
+dbo:almaMater rdf:type owl:DatatypeProperty ;
+              rdfs:domain dbo:Person ;
+              rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/ontology/awardName
+dbo:awardName rdf:type owl:DatatypeProperty ;
+              rdfs:domain dbo:Person ;
+              rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/ontology/birthDate
+dbo:birthDate rdf:type owl:DatatypeProperty ;
+              rdfs:domain dbo:Person ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://dbpedia.org/ontology/birthName
+dbo:birthName rdf:type owl:DatatypeProperty ;
+              rdfs:domain dbo:Person ;
+              rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/ontology/birthPlace
+dbo:birthPlace rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/bloodGroup
+dbo:bloodGroup rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/bloodType
+dbo:bloodType rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/citizenship
+dbo:citizenship rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/colleague
+dbo:colleague rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/college
+dbo:college rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/deathYear
+dbo:deathYear rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/diploma
+dbo:diploma rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/employer
+dbo:employer rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/ethnicity
+dbo:ethnicity rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/idNumber
+dbo:idNumber rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/livingPlace
+dbo:livingPlace rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/mother
+dbo:mother rdf:type owl:DatatypeProperty .
+
+
+###  http://dbpedia.org/ontology/patent
+dbo:patent rdf:type owl:DatatypeProperty ;
+           rdfs:domain dbo:Person ;
+           rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/ontology/salary
+dbo:salary rdf:type owl:DatatypeProperty ;
+           rdfs:domain dbo:Person ;
+           rdfs:range xsd:double ;
+           owl:propertyDisjointWith dbo:sex .
+
+
+###  http://dbpedia.org/ontology/sex
+dbo:sex rdf:type owl:DatatypeProperty ;
+        rdfs:domain dbo:Person ;
+        rdfs:range xsd:string .
+
+
+###  http://dbpedia.org/ontology/Person/height
+<http://dbpedia.org/ontology/Person/height> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain dbo:Person ;
+                                            rdfs:range xsd:float .
+
+
+###  http://dbpedia.org/ontology/Person/weight
+<http://dbpedia.org/ontology/Person/weight> rdf:type owl:DatatypeProperty ;
+                                            rdfs:domain dbo:Person ;
+                                            rdfs:range xsd:float .
+
+
+###  http://www.entrega1/ontologies/taskItem
+:taskItem rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Task ;
+          rdfs:range xsd:string ;
+          owl:propertyDisjointWith rdfs:label .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#label
+rdfs:label rdf:type owl:DatatypeProperty ;
+           rdfs:domain owl:Thing .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://dbpedia.org/ontology/Person
+dbo:Person rdf:type owl:Class ;
+           owl:disjointWith :Competence .
+
+
+###  http://dbpedia.org/ontology/Skill
+dbo:Skill rdf:type owl:Class ;
+          owl:equivalentClass :Competence .
+
+
+###  http://dbpedia.org/ontology/Task
+dbo:Task rdf:type owl:Class ;
+         owl:equivalentClass :Task .
+
+
+###  http://www.entrega1/ontologies/Competence
+:Competence rdf:type owl:Class ;
+            owl:disjointWith :Task .
+
+
+###  http://www.entrega1/ontologies/Task
+:Task rdf:type owl:Class .
+
+
+###  Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi
