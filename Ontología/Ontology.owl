@@ -25,7 +25,8 @@ dbo:Partner rdf:type owl:ObjectProperty ,
 ###  http://dbpedia.org/ontology/father
 dbo:father rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf dbo:parent ;
-           rdf:type owl:AsymmetricProperty ;
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty ;
            rdfs:domain dbo:Person ;
            rdfs:range dbo:Person ;
            owl:propertyDisjointWith dbo:mother .
@@ -34,7 +35,8 @@ dbo:father rdf:type owl:ObjectProperty ;
 ###  http://dbpedia.org/ontology/mother
 dbo:mother rdf:type owl:ObjectProperty ;
            rdfs:subPropertyOf dbo:parent ;
-           rdf:type owl:AsymmetricProperty .
+           rdf:type owl:FunctionalProperty ,
+                    owl:AsymmetricProperty .
 
 
 ###  http://dbpedia.org/ontology/parent
@@ -177,12 +179,19 @@ dbo:diploma rdf:type owl:DatatypeProperty ;
             rdfs:range xsd:string .
 
 
+###  http://dbpedia.org/ontology/duration
+dbo:duration rdf:type owl:DatatypeProperty ;
+             rdfs:domain :Task ;
+             rdfs:range xsd:integer .
+
+
 ###  http://dbpedia.org/ontology/employer
 dbo:employer rdf:type owl:DatatypeProperty .
 
 
 ###  http://dbpedia.org/ontology/ethnicity
-dbo:ethnicity rdf:type owl:DatatypeProperty .
+dbo:ethnicity rdf:type owl:DatatypeProperty ;
+              rdfs:subPropertyOf owl:topDataProperty .
 
 
 ###  http://dbpedia.org/ontology/idNumber
@@ -195,12 +204,6 @@ dbo:livingPlace rdf:type owl:DatatypeProperty .
 
 ###  http://dbpedia.org/ontology/mother
 dbo:mother rdf:type owl:DatatypeProperty .
-
-
-###  http://dbpedia.org/ontology/name
-dbo:name rdf:type owl:DatatypeProperty ;
-         rdfs:domain dbo:Company ;
-         rdfs:range xsd:string .
 
 
 ###  http://dbpedia.org/ontology/patent
@@ -238,10 +241,30 @@ dbo:sex rdf:type owl:DatatypeProperty ;
 <http://purl.org/dc/terms/description> rdf:type owl:DatatypeProperty .
 
 
+###  http://www.entrega1/ontologies/companyName
+:companyName rdf:type owl:DatatypeProperty ;
+             rdfs:subPropertyOf owl:topDataProperty ;
+             rdfs:domain dbo:Company ;
+             rdfs:range xsd:string .
+
+
 ###  http://www.entrega1/ontologies/hasSector
 :hasSector rdf:type owl:DatatypeProperty ;
            rdfs:domain dbo:Company ;
            rdfs:range xsd:string .
+
+
+###  http://www.entrega1/ontologies/jobName
+:jobName rdf:type owl:DatatypeProperty ;
+         rdfs:subPropertyOf owl:topDataProperty ;
+         rdfs:domain :jobPosition ;
+         rdfs:range xsd:string .
+
+
+###  http://www.entrega1/ontologies/qualityGrade
+:qualityGrade rdf:type owl:DatatypeProperty ;
+              rdfs:domain :Task ;
+              rdfs:range xsd:float .
 
 
 ###  http://www.entrega1/ontologies/taskItem
@@ -254,6 +277,10 @@ dbo:sex rdf:type owl:DatatypeProperty ;
 ###  http://www.w3.org/2000/01/rdf-schema#label
 rdfs:label rdf:type owl:DatatypeProperty ;
            rdfs:domain owl:Thing .
+
+
+###  http://xmlns.com/foaf/0.1/label
+<http://xmlns.com/foaf/0.1/label> rdf:type owl:DatatypeProperty .
 
 
 #################################################################
