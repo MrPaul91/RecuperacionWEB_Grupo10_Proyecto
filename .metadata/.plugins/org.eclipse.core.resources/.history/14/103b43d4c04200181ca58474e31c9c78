@@ -1,0 +1,96 @@
+package llenadoOntologia;
+
+
+import virtuoso.jena.driver.*;
+
+import org.apache.jena.query.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.InputStream;
+
+import org.apache.jena.ontology.Individual;
+import org.apache.jena.ontology.OntClass;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.util.FileManager;
+import org.apache.jena.vocabulary.RDF;
+
+
+public class ConsultasCompany {
+	
+public static void main(String []args) throws Exception{
+		
+		VirtGraph set = new VirtGraph("company","jdbc:virtuoso://50.18.123.50:1111","dba","dba");
+		
+		FileReader file = new FileReader("ConsultaCompany.txt");
+		
+		
+		BufferedReader reader = new BufferedReader(file);
+		
+	    String s = reader.readLine();
+		
+	    ResultSet results = queryFactory.runQuery(s, "company");
+	    
+	   
+	    
+	    InputStream fileOntology = FileManager.get().open("Ontology.owl");
+	    
+	    int indice = 0;
+	    
+	  //Insercion en la ontologia.
+        Model model = ModelFactory.createDefaultModel();
+        String URIOntology = "http://www.entrega1/ontologies/";	        
+        String URIDbpedia= "http://dbpedia.org/ontology/";	        
+        String URICompany  = URIDbpedia+"Company";
+        
+        Resource companyresource = model.createResource(URICompany);
+      
+        //A
+        Resource individualCompany = model.createResource(URIDbpedia+""+ "compania"+""+indice,companyresource);
+        
+        //model.add(individualCompany, RDF.type, companyresource);
+        Property propertyhasSector = model.createProperty(URIOntology+"hasSector");
+        
+        /*model.add(individualCompany,propertyResource,URIOntology+"Ensayo");
+        */
+        individualCompany.addProperty(propertyhasSector,URIDbpedia+"xddd");
+        
+        
+        
+        model.write(System.out,"TURTLE");
+        
+        
+        
+        
+        
+	    /*while( results.hasNext()){
+	    	QuerySolution soln = results.nextSolution();
+	    	
+	        String companyName = soln.getLiteral("nombreinstitucion").toString();
+	        String address = soln.getLiteral("direccion").toString();
+	        String sector = soln.getLiteral("sector").toString();
+	        
+	        ///Insercion en la ontologia.
+	        Model model = ModelFactory.createDefaultModel();
+	        String URIOntology = "http://www.entrega1/ontologies/";	        
+	        String URIDbpedia= "http://dbpedia.org/ontology/";	        
+	        String URICompany  = URIDbpedia+"Company";
+	        
+	        Resource companyresource = model.createResource(URICompany);
+	      
+	        //A
+	        Resource individualCompany = model.createResource("compania"+""+indice,companyresource);
+	        
+	        individualCompany.addProperty(RDF.type, indi);
+	        
+	        indice++;
+	    }*/
+					
+				
+	}
+
+}

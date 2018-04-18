@@ -1,0 +1,1631 @@
+@prefix dbo:   <http://dbpedia.org/ontology/> .
+@prefix :      <http://www.entrega1/ontologies/> .
+@prefix dbr:   <http://dbpedia.org/resource/> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix foaf:  <http://xmlns.com/foaf/spec/> .
+
+<compania206>  a      dbo:Company ;
+        :address      "Trabajo" , "Carrera 14 No. 99-33 pisos 6, 7, 10, 11, 12 y 13\r\n" ;
+        :companyName  "Ministerio del Trabajo" .
+
+<compania48>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "CALLE 25 7 ESTE - 84 FINCA LOPE VIA LA CAROLINA" ;
+        :companyName  "Corporación Autónoma Regional de Narino" .
+
+<compania182>  a      dbo:Company ;
+        :address      "Educación" , "CALLE 32 A No. 19-35\r\nBARRIO LA SOLEDAD" ;
+        :companyName  "Instituto Nacional para Sordos" .
+
+<compania18>  a       dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Av. 2 No. 31N - 36 Oficina T - 208 Barrio Tasajero\r\n" ;
+        :companyName  "Central de Abastos de Cúcuta S.A." .
+
+<compania278>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida El Dorado N° 69 C - 03 Hotel Sheraton Local 103 Y Local 206 Res. 6835 del 18/06/2014\r\n" ;
+        :companyName  "Notaria 73 de Bogotá\r" .
+
+<compania152>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Carrera 23 No. 64B-33 Edificio de Negocios Torre GENSA" ;
+        :companyName  "Gestión Energética S.A. E.S.P." .
+
+<compania333>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 11  101-80" ;
+        :companyName  "Universidad Militar Nueva Granada" .
+
+<compania248>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 15 No. 91-06\r\n" ;
+        :companyName  "Notaria 45 de Bogotá\r" .
+
+<compania3>  a        dbo:Company ;
+        :address      "No Aplica" , "Av. La Esperanza entre carreras 62 - 64. Ed. Gran Estación II, piso 10 costado occidental" ;
+        :companyName  "Auditoria General de la Republica" .
+
+<compania122>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Cra. 30 No.65 - 15 Edif. ICA" ;
+        :companyName  "Fondo Bufalero del Centro" .
+
+<compania303>  a      dbo:Company ;
+        :address      "Planeación" , "Calle 17 No. 3 - 40" ;
+        :companyName  "Superintendencia de Servicios Públicos Domiciliarios" .
+
+<compania218>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 13 No 60 - 53" ;
+        :companyName  "Notaria 19 de Bogotá" .
+
+<compania194>  a      dbo:Company ;
+        :address      "Cultura" , "Carrera 8 No. 8 - 43" ;
+        :companyName  "Ministerio de Cultura" .
+
+<compania91>  a       dbo:Company ;
+        :address      "Planeación" , "Calle 26 Numero 13 - 19" ;
+        :companyName  "Departamento Nacional de Planeación" .
+
+<compania164>  a      dbo:Company ;
+        :address      "Defensa" , "Calle 102 No. 7 - 57" ;
+        :companyName  "Instituto de Casas Fiscales del Ejército" .
+
+:PersonWithJob  a         owl:Class ;
+        rdfs:subClassOf   [ a                   owl:Class ;
+                            owl:intersectionOf  ( dbo:Person
+                                                  [ a                 owl:Class ;
+                                                    owl:complementOf  :PersonWithoutJob
+                                                  ]
+                                                )
+                          ] ;
+        owl:disjointWith  :PersonWithoutJob .
+
+<compania61>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 1 No. 52 - 10 Sector Muelle" ;
+        :companyName  "Corporación Autónoma Regional del Rio Grande de la Magdalena Cormagdalena" .
+
+<compania134>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "carrera 4 No. 22 - 02 Edificio de infraestructura departamental" ;
+        :companyName  "Fondo Ganadero del Cauca" .
+
+<compania315>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 96 No. 9A-21" ;
+        :companyName  "Unidad Administrativa Especial Junta Central de Contadores" .
+
+<compania291>  a      dbo:Company ;
+        :address      "Defensa" , "Avenida El Dorado No. 103-08 Entrada 1 Interior 11" ;
+        :companyName  "Servicio Aéreo A Territorios Nacionales S.A." .
+
+<http://purl.org/dc/terms/description>
+        a            owl:DatatypeProperty ;
+        rdfs:domain  :jobPosition ;
+        rdfs:range   xsd:string .
+
+<compania31>  a       dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "CALLE 93B No. 16-47 piso 5" ;
+        :companyName  "Agencia del Inspector General de Tributos, Rentas y Contribuciones Parafiscales" .
+
+dbo:mother  a               owl:DatatypeProperty , owl:AsymmetricProperty , owl:FunctionalProperty , owl:ObjectProperty ;
+        rdfs:domain         dbo:Person ;
+        rdfs:range          xsd:string , dbo:Person ;
+        rdfs:subPropertyOf  dbo:parent .
+
+<compania104>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Vía Neiva -Palermo Kilómetro 1" ;
+        :companyName  "Electrificadora del Huila S.A. E.S.P." .
+
+<compania261>  a      dbo:Company ;
+        :address      "No Aplica" , "diagonal 47 a sur No. 52c-91 Esquina venecia\r\n" ;
+        :companyName  "Notaria 58 de Bogotá\r" .
+
+<compania176>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 7A # 12 - 61" ;
+        :companyName  "Instituto Nacional de Medicina Legal y Ciencias Forenses" .
+
+<compania231>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 50 No. 37-45\r\n" ;
+        :companyName  "Notaria 3 de Medellín\r" .
+
+<compania73>  a       dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 70a No. 10 - 46" ;
+        :companyName  "Corporación para El Desarrollo de Las Microempresas" .
+
+<compania146>  a      dbo:Company ;
+        :address      "Defensa" , "Carrera 66 a  No.43 - 18" ;
+        :companyName  "Fondo Rotatorio de la Policía Nacional" .
+
+<compania327>  a      dbo:Company ;
+        :address      "Educación" , "Calle 65 No. 26 - 10" ;
+        :companyName  "Universidad de Caldas" .
+
+<compania201>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Carrera 13 No 32 - 76" ;
+        :companyName  "Ministerio de Salud y Protección Social" .
+
+<compania43>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 13 Avenida El Bosque No. 3E-278" ;
+        :companyName  "Corporación Autónoma Regional de la Frontera Nororiental" .
+
+<compania116>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "CALLE 72 No. 10-03 Pisos 4, 5, 8 y 9" ;
+        :companyName  "Fiduciaria la Previsora S.A." .
+
+dbo:awardName  a     owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania13>  a       dbo:Company ;
+        :address      "Defensa" , "Cra. 54 No. 26 - 54 CAN" ;
+        :companyName  "Caja Promotora de Vivienda Militar y de Policía" .
+
+<compania273>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida Calle 134 No. 7B-83 Local 1\r\n" ;
+        :companyName  "Notaria 69 de Bogotá" .
+
+<compania188>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Calle 57 No. 9-07" ;
+        :companyName  "La Previsora S.A. Compañía de Seguros" .
+
+<compania243>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 45 No.49-69 Piso 2\r\n" ;
+        :companyName  "Notaria 4 de Medellín\r" .
+
+<compania85>  a       dbo:Company ;
+        :address      "Función Pública" , "CARRERA 6  12-62 " ;
+        :companyName  "Departamento Administrativo de la Función Pública" .
+
+dbo:deathYear  a     owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:dateTime .
+
+<compania158>  a      dbo:Company ;
+        :address      "Cultura" , "Calle 10 No 4 - 69 - Sede Centro\r\nKm 24 Autopista Norte - Sede Yerbabuena" ;
+        :companyName  "Instituto Caro y Cuervo" .
+
+<compania339>  a      dbo:Company ;
+        :address      "Educación" , "Avenida Pastrana Borrero Carrera 1" ;
+        :companyName  "Universidad Surcolombiana" .
+
+<compania213>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 53  No. 21-40\r\n" ;
+        :companyName  "Notaria 14 de Bogotá" .
+
+<compania9>  a        dbo:Company ;
+        :address      "No Aplica" , "CARRERA 7 NO. 14-78" ;
+        :companyName  "Banco de la Republica" .
+
+<compania55>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 7  N° 1N-28 EDIFICIO EDGAR NEGRET DUEÑAS" ;
+        :companyName  "Corporación Autónoma Regional del Cauca" .
+
+<compania128>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Calle 13 No. 18-24 Estación de la Sabana" ;
+        :companyName  "Fondo de Pasivo Social de Ferrocarriles Nacionales de Colombia" .
+
+<compania309>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 7 No. 32 - 16, Pisos 34 - 40" ;
+        :companyName  "Unidad Administrativa Especial Contaduría General de la Nación" .
+
+dbo:duration  a      owl:DatatypeProperty ;
+        rdfs:domain  :Task ;
+        rdfs:range   xsd:integer .
+
+<compania25>  a       dbo:Company ;
+        :address      "Vivienda Ciudad y Territorio" , "CARRERA 12 N°97-80 PISO 2" ;
+        :companyName  "Comisión de Regulación de Agua Potable y Saneamiento Básico" .
+
+<compania285>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Autopista Norte (Kra 45) No. 94-72" ;
+        :companyName  "Positiva Compañía de Seguros S.A." .
+
+<compania340>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 27 No 10 - 02  Barrio Alamos" ;
+        :companyName  "Universidad Tecnológica de Pereira" .
+
+<compania255>  a      dbo:Company ;
+        :address      "No Aplica" , "CENTRO COMERCIAL ISERRA 100 LOBBY PRINCIPAL\r\n" ;
+        :companyName  "Notaria 52 de Bogotá\r" .
+
+<compania97>  a       dbo:Company ;
+        :address      "Transporte" , "VACIA" ;
+        :companyName  "Agencia Nacional de Seguridad Vial" .
+
+<compania310>  a      dbo:Company ;
+        :address      "Transporte" , "Av. El Dorado 103-15 Nuevo Edificio Aerocivil" ;
+        :companyName  "Unidad Administrativa Especial de Aeronáutica Civil" .
+
+<compania225>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 14 N. 79 - 25 El lago" ;
+        :companyName  "Notaria 24 de Bogotá" .
+
+<compania67>  a       dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Calle 16 # 6-66 Piso 7" ;
+        :companyName  "Corporación Colombia Internacional" .
+
+<compania37>  a       dbo:Company ;
+        :address      "Justicia y del Derecho" , "Carrera 7  N° 75-66 \r\nPisos 2 y 3" ;
+        :companyName  "Agencia Nacional de Defensa Jurídica del Estado" .
+
+<compania297>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Calle 16 No 6 - 66 Pisos 26, 28 y 29" ;
+        :companyName  "Sociedad Fiduciaria de Desarrollo Agropecuario S.A." .
+
+<compania171>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Calle 99 N° 9ª - 54 edificio100 street (Seguros la Equidad)" ;
+        :companyName  "Instituto de Planificación y Promoción de Soluciones Energéticas para Las Zonas No Interconectadas" .
+
+<compania267>  a      dbo:Company ;
+        :address      "No Aplica" , "Av. Villas Cr 58 N° 128-60\r\n" ;
+        :companyName  "Notaria 63 de Bogotá\r" .
+
+<compania141>  a      dbo:Company ;
+        :address      "Vivienda Ciudad y Territorio" , "Cra 65 No 11 - 83" ;
+        :companyName  "Fondo Nacional de Ahorro" .
+
+<compania322>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "VACIA" ;
+        :companyName  "Unidad de Proyección Normativa y Estudios de Regulación Financiera" .
+
+<compania237>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida 82 No. 11-62/64 Local 102\r\n" ;
+        :companyName  "Notaria 35 de Bogotá" .
+
+<compania79>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 92   # 98-39" ;
+        :companyName  "Corporación para El Desarrollo Sostenible del Urabá" .
+
+<compania111>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Avenida 1 No. 13a 61" ;
+        :companyName  "Empresa Social del Estado Centro dermatológico Federico Lleras Acosta" .
+
+<compania207>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 16 No. 4-62" ;
+        :companyName  "Notaria 1 de Bogotá" .
+
+<compania49>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Avenida de las Américas con Calle 46 # 46 - 40" ;
+        :companyName  "Corporación Autónoma Regional de Risaralda" .
+
+:hasJobPosition  a   owl:ObjectProperty ;
+        rdfs:domain  dbo:Company ;
+        rdfs:range   :jobPosition .
+
+<compania183>  a      dbo:Company ;
+        :address      "Justicia y del Derecho" , "Calle 26 No. 27-48" ;
+        :companyName  "Instituto Nacional Penitenciario y Carcelario" .
+
+<compania19>  a       dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Calle 63 N. 11-09" ;
+        :companyName  "Central de Inversiones S.A." .
+
+<compania279>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 80 i No 61-15 Sur Bosa\r\n" ;
+        :companyName  "Notaria 74 de Bogotá\r" .
+
+<compania80>  a       dbo:Company ;
+        :address      "Minas y Energía" , "Avenida Calle 26 No. 59-65 Piso 2o." ;
+        :companyName  "Agencia Nacional de Hidrocarburos" .
+
+<compania153>  a      dbo:Company ;
+        :address      "Defensa" , "TRANSVERSAL 3a. No 49-00" ;
+        :companyName  "Hospital Militar Central" .
+
+<compania334>  a      dbo:Company ;
+        :address      "Educación" , "Calle 14 Sur 14-23" ;
+        :companyName  "Universidad Nacional Abierta y A Distancia -Unad" .
+
+<compania249>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 47 # 91 - 25" ;
+        :companyName  "Notaria 46 de Bogotá\r" .
+
+<compania4>  a        dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Calle 40 A No. 13 - 09 Piso 6 y 14 Edificio\r\nUGI" ;
+        :companyName  "Autoridad Nacional de Acuicultura y Pesca" .
+
+<compania50>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 10 No. 13-78" ;
+        :companyName  "Corporación Autónoma Regional de Santander" .
+
+<compania123>  a      dbo:Company ;
+        :address      "No Aplica" , "CALLE 15 No 8 A 22 PISO QUINTO" ;
+        :companyName  "Fondo de Bienestar Social de la Contaloria General de la Republica." .
+
+<compania304>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Avenida El Dorado No. 51- 80" ;
+        :companyName  "Superintendencia de Sociedades" .
+
+<compania219>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 13 No. 64-29" ;
+        :companyName  "Notaria 2 de Bogotá" .
+
+<compania20>  a       dbo:Company ;
+        :address      "Minas y Energía" , "Calle 20 No. 36 -12" ;
+        :companyName  "Centrales Eléctricas de Nariño S.A. E.S.P." .
+
+<compania280>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida Suba No. 106-52\r\n" ;
+        :companyName  "Notaria 75 de Bogotá\r" .
+
+<compania195>  a      dbo:Company ;
+        :address      "Defensa" , "Carrera 54 No. 26 - 25 CAN" ;
+        :companyName  "Ministerio de Defensa Nacional" .
+
+<compania250>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 101 No. 45A - 32" ;
+        :companyName  "Notaria 47 de Bogotá\r" .
+
+<compania92>  a       dbo:Company ;
+        :address      "Interior" , "Carrera 30 No 85 A  39" ;
+        :companyName  "Dirección Nacional de Bomberos" .
+
+<compania165>  a      dbo:Company ;
+        :address      "No Aplica" , "VACIA" ;
+        :companyName  "Instituto de Estudios del Ministerio Público" .
+
+<compania220>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 9 No. 43B -17\r\n" ;
+        :companyName  "Notaria 2 de Medellín\r" .
+
+<compania62>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Avenida Colombia Calle 16 No.10 - 27" ;
+        :companyName  "Corporación Autónoma Regional del Sur de Bolívar" .
+
+<compania135>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "calle 16b 11-83 valledupar" ;
+        :companyName  "Fondo Ganadero del Cesar" .
+
+<compania316>  a      dbo:Company ;
+        :address      "Relaciones Exteriores" , "Av. El Dorado No. 59 - 51, Edificio Argos, Torre 3, Piso 4\r\n" ;
+        :companyName  "Unidad Administrativa Especial Migración Colombia" .
+
+<compania292>  a      dbo:Company ;
+        :address      "Minas y Energía" , "DIAGONAL 53 No 34 - 53" ;
+        :companyName  "Servicio Geológico Colombiano" .
+
+<compania32>  a       dbo:Company ;
+        :address      "Defensa" , "Sede Principal: Carrera 50 No. 18 - 92 Sede No. 1: Carrera 50 No. 15 - 35 Bogotá D.C., Colombia." ;
+        :companyName  "Agencia Logística de Las Fuerzas Militares" .
+
+<compania105>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Calle 40 No. 32-35" ;
+        :companyName  "Electrificadora del Meta S.A. E.S.P." .
+
+<compania262>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 146 C Bis No 90-11\r\n" ;
+        :companyName  "Notaria 59 de Bogotá\r" .
+
+<compania177>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "AV CRA 50 NÚMERO 26 - 55 INTERIOR 2 CAN" ;
+        :companyName  "Instituto Nacional de Metrología" .
+
+<compania232>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 15 No. 92-73\r\n" ;
+        :companyName  "Notaria 30 de Bogotá" .
+
+<compania74>  a       dbo:Company ;
+        :address      "Vivienda Ciudad y Territorio" , "Carrera 21 No. 21 A - 44" ;
+        :companyName  "Corporación para El Desarrollo Sostenible de la Mojana y El San Jorge" .
+
+<compania147>  a      dbo:Company ;
+        :address      "No Aplica" , "VACIA" ;
+        :companyName  "Fondo Rotatorio de la Registraduría Nacional del Estado Civil" .
+
+<compania328>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 6 No. 76 - 103" ;
+        :companyName  "Universidad de Córdoba" .
+
+<compania202>  a      dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Edificio Murillo Toro Carreras 7 y 8 entre calles 12 a y 13" ;
+        :companyName  "Ministerio de Tecnologías de la Información y Las Comunicaciones" .
+
+<compania44>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 7A No 12-25 Edificio CORPOGUAJIRA" ;
+        :companyName  "Corporación Autónoma Regional de la Guajira" .
+
+:PersonWithoutJob  a     owl:Class ;
+        rdfs:subClassOf  dbo:Person .
+
+<compania117>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera7 Nro. 71-51 Piso 6 Torre B" ;
+        :companyName  "Financiera de Desarrollo Nacional" .
+
+<compania14>  a       dbo:Company ;
+        :address      "No Aplica" , "Calle 10 No. 7-50" ;
+        :companyName  "Cámara de Representantes" .
+
+<compania274>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 12 B N°8-39. Int. 3,6 y 7\r\n" ;
+        :companyName  "Notaria 7 de Bogotá" .
+
+<compania189>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 28 No. 13A-15 Piso 21" ;
+        :companyName  "Leasing Bancoldex S.A. Compañía de Financiamiento Comercial" .
+
+<compania244>  a      dbo:Company ;
+        :address      "No Aplica" , "Cra 46 No. 152-46 local 272 al 275 c.c mazuren\r\n" ;
+        :companyName  "Notaria 40 de Bogotá\r" .
+
+<compania86>  a       dbo:Company ;
+        :address      "Presidencia de la República" , "Calle 7 No. 6-54" ;
+        :companyName  "Departamento Administrativo de la Presidencia de la República" .
+
+<compania159>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Carrera 41 No. 17-81" ;
+        :companyName  "Instituto Colombiano Agropecuario" .
+
+<compania214>  a      dbo:Company ;
+        :address      "No Aplica" , "CALLE 99 N  11 B - 17\r\n" ;
+        :companyName  "Notaria 15 de Bogotá" .
+
+<compania56>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 65 No. 44A - 32" ;
+        :companyName  "Corporación Autónoma Regional del Centro de Antioquia" .
+
+<compania129>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Carrera 10 No. 24 - 55 Pisos 2 y 3" ;
+        :companyName  "Fondo de Previsión Social del Congreso de la República" .
+
+<compania190>  a      dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Calle 74 No 57-35 C.A.C Prado" ;
+        :companyName  "Metropolitana de Telecomunicaciones S.A. E.S.P." .
+
+<compania286>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 5 No. 15-80" ;
+        :companyName  "Procuraduria General de la Nación" .
+
+<compania26>  a       dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Calle 59 A bis No. 5 - 53 Edificio LINK Siete Sesenta Piso 9 Bogotá D.C" ;
+        :companyName  "Comisión de Regulación de Comunicaciones" .
+
+dbo:colleague  a     owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania160>  a      dbo:Company ;
+        :address      "Cultura" , "Calle 12 Numero. 2-41" ;
+        :companyName  "Instituto Colombiano de Antropología e Historia" .
+
+<compania341>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 22 No 18 B-10" ;
+        :companyName  "Universidad Tecnológica del Choco Diego Luis Córdoba" .
+
+<compania256>  a      dbo:Company ;
+        :address      "No Aplica" , "Cra. 70 B No 26-20 Sur\r\n" ;
+        :companyName  "Notaria 53 de Bogotá\r" .
+
+<compania98>  a       dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Calle 43 No.57-41" ;
+        :companyName  "Agencia Nacional de Tierras" .
+
+<compania130>  a      dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Cra 8a. entre calles 12 y 13 - Edf Murillo Toro" ;
+        :companyName  "Fondo de Tecnologías de la Información y Las Comunicaciones" .
+
+<compania311>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Avenida Calle 72 No. 11 - 81 / 85" ;
+        :companyName  "Unidad Administrativa Especial de Gestión de Restitución de Tierras Despojadas" .
+
+<compania226>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 93B No. 15-34 INT. 101" ;
+        :companyName  "Notaria 25 de Bogotá" .
+
+<compania68>  a       dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Avenida el Dorado 42 - 42" ;
+        :companyName  "Corporación Colombiana de Investigación Agropecuaria" .
+
+<compania100>  a      dbo:Company ;
+        :address      "Presidencia de la República" , "Avenida Calle 24 A No. 59 - 42 Oficina 503, Torre Argos." ;
+        :companyName  "Agencia Nacional Inmobiliaria Virgilio Barco Vargas" .
+
+<compania38>  a       dbo:Company ;
+        :address      "No Aplica" , "Carrera 9 No 12C -10" ;
+        :companyName  "Contraloría General de la República" .
+
+:isTaskOf  a         owl:ObjectProperty ;
+        rdfs:domain  :Task ;
+        rdfs:range   dbo:Skill .
+
+<compania298>  a      dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Avenida El Dorado Carrera 45 No 26-33" ;
+        :companyName  "Sociedad Radio Televisión Nacional de Colombia" .
+
+<compania172>  a      dbo:Company ;
+        :address      "Estadísticas" , "Carrera 30 No. 48 - 51" ;
+        :companyName  "Instituto Geográfico Agustín Codazzi" .
+
+<compania268>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 25 G No 73 A - 29\r\n" ;
+        :companyName  "Notaria 64 de Bogotá\r" .
+
+<compania142>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 26 A No 13- 97 Piso 25" ;
+        :companyName  "Fondo Nacional de Garantías S.A." .
+
+<compania323>  a      dbo:Company ;
+        :address      "Justicia y del Derecho" , "Calle 97A No. 9A 34" ;
+        :companyName  "Unidad de Servicios Penitenciarios y Carcelarios" .
+
+<compania238>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 71 A N° 15-19 y 15-25\r\n" ;
+        :companyName  "Notaria 36 de Bogotá\r" .
+
+<compania112>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Carrera 3 No. 68 - 70" ;
+        :companyName  "Empresa Urrá S.A. E.S.P." .
+
+<compania208>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 44 No. 71-55\r\n" ;
+        :companyName  "Notaria 1 de Medellín\r" .
+
+dbo:patent  a               owl:DatatypeProperty ;
+        rdfs:domain         dbo:Person ;
+        rdfs:range          xsd:string ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+<compania184>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 50 a No. 22 - 13\r\nCarrera 22 No. 5 a 21 Barrio Alameda" ;
+        :companyName  "Instituto Técnico Nacional de Comercio Simón Rodríguez" .
+
+<compania81>  a       dbo:Company ;
+        :address      "No Aplica" , "VACIA" ;
+        :companyName  "Corte Constitucional" .
+
+<compania154>  a      dbo:Company ;
+        :address      "Interior" , "Carrera 66 No 24 - 9" ;
+        :companyName  "Imprenta Nacional de Colombia" .
+
+<compania335>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 45 No 26-85  Edificio Uriel Gutiérrez" ;
+        :companyName  "Universidad Nacional de Colombia" .
+
+dbo:bloodGroup  a    owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania5>  a        dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 37 No. 8-40" ;
+        :companyName  "Autoridad Nacional de Licencias Ambientales" .
+
+<compania51>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Cra 25 No. 25-101 Avenida Ocala \r\n\r\n" ;
+        :companyName  "Corporación Autónoma Regional de Sucre" .
+
+<compania124>  a      dbo:Company ;
+        :address      "Educación" , "Calle 57 No 8 B - 05 Interior 32" ;
+        :companyName  "Fondo de Desarrollo de la Educación Superior" .
+
+<compania305>  a      dbo:Company ;
+        :address      "Defensa" , "Carrera 10 No. 26-71 Int. 106 Pisos 2, 3 y 4" ;
+        :companyName  "Superintendencia de Vigilancia y Seguridad Privada" .
+
+<compania21>  a       dbo:Company ;
+        :address      "Minas y Energía" , "Cr 7 No 1 N - 28 Edificio Edgar Negret Pisos 3 y 4 (Popayan)" ;
+        :companyName  "Centrales Eléctricas del Cauca S.A. E.S.P." .
+
+<compania281>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida Calle 53 No. 73A-73\r\n" ;
+        :companyName  "Notaria 76 de Bogotá\r" .
+
+<compania196>  a      dbo:Company ;
+        :address      "Educación" , "Calle 43 No. 57 - 14" ;
+        :companyName  "Ministerio de Educación Nacional" .
+
+<compania251>  a      dbo:Company ;
+        :address      "No Aplica" , "Av. Calle 13 No. 42 A - 79\r\n" ;
+        :companyName  "Notaria 49 de Bogotá" .
+
+<compania93>  a       dbo:Company ;
+        :address      "Interior" , "Calle 28 No. 13 A - 15 piso 17" ;
+        :companyName  "Dirección Nacional de derecho de Autor" .
+
+<compania166>  a      dbo:Company ;
+        :address      "Ciencia, Tecnología e innovación" , "VACIA" ;
+        :companyName  "Instituto de Evaluación Tecnológica en Salud" .
+
+<compania221>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 76 No. 14-27" ;
+        :companyName  "Notaria 20 de Bogotá" .
+
+<compania63>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Avenida Ferrocarril con 44 Esquina" ;
+        :companyName  "Corporación Autónoma Regional del Tolima" .
+
+<compania136>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "calle 29# 2-43" ;
+        :companyName  "Fondo Ganadero del Cordoba" .
+
+<compania317>  a      dbo:Company ;
+        :address      "Inclusión Social y Reconciliación" , "CALLE16 N° 6-66 Edificio Avianca Sede Principal" ;
+        :companyName  "Unidad Administrativa Especial para la Atención y Reparación Integral a Las Víctimas" .
+
+<compania293>  a      dbo:Company ;
+        :address      "Trabajo" , "Calle 57 No. 8-69" ;
+        :companyName  "Servicio Nacional de Aprendizaje" .
+
+<compania33>  a       dbo:Company ;
+        :address      "Planeación" , "Carrera 7 No. 26 - 20 Piso 17 Edificio Seguros Tequendama Bogotá D.C" ;
+        :companyName  "Agencia Nacional de Contratación Pública - Colombia Compra Eficiente" .
+
+<compania106>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Avenida el Dorado No.82-93" ;
+        :companyName  "Empresa Colombiana de Productos Veterinarios Vecol S.A.." .
+
+:jobPosition  a          owl:Class ;
+        rdfs:subClassOf  [ a                            owl:Restriction ;
+                           owl:minQualifiedCardinality  "1"^^xsd:nonNegativeInteger ;
+                           owl:onClass                  :Competence ;
+                           owl:onProperty               :needsCompetence
+                         ] .
+
+<compania263>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 9 No. 69 - 31\r\n" ;
+        :companyName  "Notaria 6 de Bogotá" .
+
+:isEmployedBy  a       owl:ObjectProperty ;
+        rdfs:domain    dbo:Person ;
+        rdfs:range     dbo:Company ;
+        owl:inverseOf  :isEmployerOf .
+
+<compania178>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Avenida calle 26 No. 51-20 - Zona 6 CAN" ;
+        :companyName  "Instituto Nacional de Salud" .
+
+<compania233>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 117 No. 6 A - 19\r\n" ;
+        :companyName  "Notaria 31 de Bogotá\r" .
+
+<compania75>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Vía San Luis, Bight, Km 26,  San Andrés Isla" ;
+        :companyName  "Corporación para El Desarrollo Sostenible del Archipiélago de San Andres Providencia y Santa Catalina" .
+
+<compania148>  a      dbo:Company ;
+        :address      "Inteligencia Estratégica y Contrainteligencia" , "Kr 28 No. 17A - 00" ;
+        :companyName  "Fondo Rotatorio del Departamento Administrativo de Seguridad" .
+
+<compania329>  a      dbo:Company ;
+        :address      "Educación" , "Calle 17 Diagonal 17 con Carrera 3F" ;
+        :companyName  "Universidad de la Amazonia" .
+
+<compania203>  a      dbo:Company ;
+        :address      "Transporte" , "Avenida el Dorado C.A.N." ;
+        :companyName  "Ministerio de Transporte" .
+
+<compania45>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 23 No. 18-31 Yopal" ;
+        :companyName  "Corporación Autónoma Regional de la Orinoquia" .
+
+<compania118>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Calle 103 No. 19-20" ;
+        :companyName  "Financiera de Desarrollo Territorial S.A." .
+
+:companyName  a             owl:DatatypeProperty ;
+        rdfs:domain         dbo:Company ;
+        rdfs:range          xsd:string ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+:hasSkill  a           owl:ObjectProperty ;
+        rdfs:domain    dbo:Person ;
+        rdfs:range     dbo:Skill ;
+        owl:inverseOf  :isSkillOf .
+
+dbo:bloodType  a     owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania15>  a       dbo:Company ;
+        :address      "No Aplica" , "Carrera 30 No 1-2487 Corredor Universitario" ;
+        :companyName  "Canal Regional de Televisión del Caribe Ltda." .
+
+<compania275>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 69 J No. 72-26 FERIAS\r\n\r\n" ;
+        :companyName  "Notaria 70 de Bogotá\r" .
+
+<compania330>  a      dbo:Company ;
+        :address      "Educación" , "Km 12 Via Puerto Lopez Vereda Barcelona" ;
+        :companyName  "Universidad de Los Llanos" .
+
+<compania245>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 15 No. 75 - 09\r\n" ;
+        :companyName  "Notaria 41 de Bogotá\r" .
+
+dbo:Person  a             owl:Class ;
+        rdfs:subClassOf   [ a                  owl:Restriction ;
+                            owl:allValuesFrom  dbo:Task ;
+                            owl:onProperty     :canDoTask
+                          ] ;
+        owl:disjointWith  :Competence .
+
+:taskItem  a                      owl:DatatypeProperty ;
+        rdfs:domain               :Task ;
+        rdfs:range                xsd:string ;
+        owl:propertyDisjointWith  rdfs:label .
+
+<compania0>  a        dbo:Company ;
+        :address      "No Aplica" , "Carrera 15 No 75-24\r\n" ;
+        :companyName  "Notaria 27 de Bogotá" .
+
+<compania87>  a       dbo:Company ;
+        :address      "Del Deporte, la Recreación, la Actividad Física y el Aprovechamiento del Tiempo Libre" , "Avenida 68 No 55-65" ;
+        :companyName  "Departamento Administrativo del Deporte, la Recreación, la Actividad Física y El Aprovechamiento del Tiempo Libre" .
+
+dbo:citizenship  a   owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania300>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 7 Numero. 31-10" ;
+        :companyName  "Superintendencia de la Economía Solidaria" .
+
+<compania215>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 9 No 69 A - 81\r\n" ;
+        :companyName  "Notaria 16 de Bogotá\r" .
+
+<compania57>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 9 No. 9 - 88" ;
+        :companyName  "Corporación Autónoma Regional del Cesar" .
+
+<compania191>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Avenida Jimenez N°. 7A - 17, Edificio Pedro A. Lopez" ;
+        :companyName  "Ministerio de Agricultura y Desarrollo Rural" .
+
+<http://xmlns.com/foaf/0.1/label>
+        a            owl:DatatypeProperty ;
+        rdfs:domain  owl:Thing ;
+        rdfs:range   xsd:string .
+
+<compania27>  a       dbo:Company ;
+        :address      "Minas y Energía" , "Avenida, Calle 116 No. 7-15 Edificio Cusezar Interior 2 oficina 901" ;
+        :companyName  "Comisión de Regulación de Energía y Gas" .
+
+<compania287>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida El Dorado # 46-20" ;
+        :companyName  "Registraduria Nacional del Estado Civil" .
+
+<compania161>  a      dbo:Company ;
+        :address      "Inclusión Social y Reconciliación" , "Avenida carrera 68 No. 64 C - 75" ;
+        :companyName  "Instituto Colombiano de Bienestar Familiar" .
+
+<compania342>  a      dbo:Company ;
+        :address      "Trabajo" , "Carrera 10 No. 72 - 33 Torre B Piso 11" ;
+        :companyName  "Administradora Colombiana de Pensiones" .
+
+<compania257>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 10 No. 15-04 Sur\r\n" ;
+        :companyName  "Notaria 54 de Bogotá\r" .
+
+<compania99>  a       dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Calle 93B # 16-47, Piso 6" ;
+        :companyName  "Agencia Nacional del Espectro" .
+
+<compania131>  a      dbo:Company ;
+        :address      "Planeación" , "Calle 26 No. 13 - 19" ;
+        :companyName  "Fondo Financiero de Proyectos de Desarrollo" .
+
+dbo:almaMater  a     owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania312>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 19 A No. 78 - 80 Piso 5°" ;
+        :companyName  "Unidad Administrativa Especial de Gestión Pensional y Contribuciones Parafiscales de la Protección Social" .
+
+<compania227>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 12 No 93 - 26" ;
+        :companyName  "Notaria 26 de Bogotá" .
+
+<compania69>  a       dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Avenida carrera 80 No. 2-51 sur" ;
+        :companyName  "Corporación de Abastos de Bogotá S.A." .
+
+<compania101>  a      dbo:Company ;
+        :address      "Presidencia de la República" , "Carrerra 11 N° 93- 53 piso 7°" ;
+        :companyName  "Agencia Presidencial de Cooperación Internacional de Colombia" .
+
+:Competence  a            owl:Class ;
+        owl:disjointWith  :Task .
+
+<compania39>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Antigua Via a Paipa No. 53-70" ;
+        :companyName  "Corporación Autónoma Regional de Boyacá" .
+
+<compania299>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Carrera 13 No. 27 - 00 Pisos 3, 4, 5 y 10" ;
+        :companyName  "Superintendencia de Industria y Comercio" .
+
+<compania173>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Calle 1 No. 9-85" ;
+        :companyName  "Instituto Nacional de Cancerología, Empresa Social del Estado" .
+
+<compania269>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 6 No. 67-18 RES. 7914 DEL 16/07/2014\r\n" ;
+        :companyName  "Notaria 65 de Bogotá\r" .
+
+:hasSector  a        owl:DatatypeProperty ;
+        rdfs:domain  dbo:Company ;
+        rdfs:range   xsd:string .
+
+<compania70>  a       dbo:Company ;
+        :address      "Defensa" , "Calle 26 No. 51 - 53 Torre Central Piso 5" ;
+        :companyName  "Corporación de Ciencia y Tecnología para El Desarrollo de la Industria Naval" .
+
+<compania143>  a      dbo:Company ;
+        :address      "Vivienda Ciudad y Territorio" , "calle 37 N 8-40" ;
+        :companyName  "Fondo Nacional de Vivienda" .
+
+<compania324>  a      dbo:Company ;
+        :address      "Interior" , "Avenida Calle 26 No. 59-41/65" ;
+        :companyName  "Unidad Nacional de Protección" .
+
+dbo:salary  a                     owl:DatatypeProperty ;
+        rdfs:domain               dbo:Person ;
+        rdfs:range                xsd:double ;
+        owl:propertyDisjointWith  dbo:sex .
+
+<compania239>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 67 No 7-70\r\n" ;
+        :companyName  "Notaria 37 de Bogotá\r" .
+
+<compania40>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 21 N° 23-22 Edificio Seguros Atlas Pisos 12-13-14- 15-16-20 y 22" ;
+        :companyName  "Corporación Autónoma Regional de Caldas" .
+
+<compania113>  a      dbo:Company ;
+        :address      "Función Pública" , "Calle 44 No. 53 - 37 CAN" ;
+        :companyName  "Escuela Superior de Administración Pública" .
+
+<compania209>  a      dbo:Company ;
+        :address      "No Aplica" , "Av. Calle 100 No. 10-45\r\n" ;
+        :companyName  "Notaria 10 de Bogotá\r" .
+
+<compania10>  a       dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Carrera 12 No. 96-23 Bogotá" ;
+        :companyName  "Caja de Compensación Familiar Campesina" .
+
+<compania270>  a      dbo:Company ;
+        :address      "No Aplica" , "CALLE 69F BIS SUR 14A-23\r\n" ;
+        :companyName  "Notaria 66 de Bogotá\r" .
+
+<compania185>  a      dbo:Company ;
+        :address      "Educación" , "Calle 18 Carrera 1a.   Barrio Arkabal  - Antiguo Seminario Conciliar" ;
+        :companyName  "Instituto Tolimense de Formación Técnica Profesional" .
+
+:jobName  a                 owl:DatatypeProperty ;
+        rdfs:domain         :jobPosition ;
+        rdfs:range          xsd:string ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+<compania240>  a      dbo:Company ;
+        :address      "No Aplica" , "CRA 7 No. 33-13" ;
+        :companyName  "Notaria 38 de Bogotá\r" .
+
+<compania82>  a       dbo:Company ;
+        :address      "Defensa" , "Calle 52 No. 14-67" ;
+        :companyName  "Defensa Civil Colombiana" .
+
+<compania155>  a      dbo:Company ;
+        :address      "Defensa" , "Calle 44 No. 54 - 11" ;
+        :companyName  "Industria Militar" .
+
+<compania336>  a      dbo:Company ;
+        :address      "Educación" , "Calle 72 No.11 - 86" ;
+        :companyName  "Universidad Pedagógica Nacional" .
+
+<compania210>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 85 No. 10 - 74" ;
+        :companyName  "Notaria 11 de Bogotá" .
+
+<compania6>  a        dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "CALLE 72 # 12-77" ;
+        :companyName  "Autoridad Nacional de Televisión" .
+
+<compania52>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "CARRERA 1 No. 60 - 79" ;
+        :companyName  "Corporación Autónoma Regional del Alto Magdalena - Cam" .
+
+<compania125>  a      dbo:Company ;
+        :address      "Trabajo" , "Carrera 10 No 15-22" ;
+        :companyName  "Fondo de Fomento de la Economía Solidaria" .
+
+<compania306>  a      dbo:Company ;
+        :address      "Trabajo" , "Calle 45A No. 9-46" ;
+        :companyName  "Superintendencia del Subsidio Familiar" .
+
+<compania22>  a       dbo:Company ;
+        :address      "Inclusión Social y Reconciliación" , "Carrera 6 Nº 35 - 29" ;
+        :companyName  "Centro de Memoria Histórica" .
+
+<compania282>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 122 No. 15-21 Local 201\r\n" ;
+        :companyName  "Notaria 77 de Bogotá\r" .
+
+dbo:ethnicity  a            owl:DatatypeProperty ;
+        rdfs:domain         dbo:Person ;
+        rdfs:range          xsd:string ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+<compania197>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 8 No. 6C - 38" ;
+        :companyName  "Ministerio de Hacienda y Crédito Público" .
+
+<compania252>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 15A No. 120-63\r\n" ;
+        :companyName  "Notaria 5 de Bogotá" .
+
+<compania94>  a       dbo:Company ;
+        :address      "No Aplica" , "VACIA" ;
+        :companyName  "Dirección Nacional Ejecutiva de Administración Judicial" .
+
+<compania167>  a      dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 10 No. 20 - 30" ;
+        :companyName  "Instituto de Hidrología, Meteorología y Estudios Ambientales" .
+
+rdfs:label  a        owl:DatatypeProperty ;
+        rdfs:domain  owl:Thing .
+
+<compania222>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 70 A No. 8-27" ;
+        :companyName  "Notaria 21 de Bogotá" .
+
+<compania137>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Carrera 10 No. 6 - 23" ;
+        :companyName  "Fondo Ganadero del Huila" .
+
+<compania64>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 56 No. 11-36" ;
+        :companyName  "Corporación Autónoma Regional del Valle del Cauca" .
+
+<compania318>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 7 No. 31-10 piso 6 Torre Bancolombia" ;
+        :companyName  "Unidad de Información y Análisis Financiero" .
+
+<compania294>  a      dbo:Company ;
+        :address      "Trabajo" , "Carrera 69 No. 25 B - 44 Piso 3" ;
+        :companyName  "Servicio Publico de Empleo" .
+
+<compania34>  a       dbo:Company ;
+        :address      "No Aplica" , "VACIA" ;
+        :companyName  "Consejo de Estado" .
+
+<compania107>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Avenida Internacional No 8 - 81 (Leticia)" ;
+        :companyName  "Empresa de Energía del Amazonas S.A. E.S.P." .
+
+<compania264>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 161 No.16A -32\r\n" ;
+        :companyName  "Notaria 60 de Bogotá\r" .
+
+<compania179>  a      dbo:Company ;
+        :address      "Transporte" , "Carrera 59 N° 26-60" ;
+        :companyName  "Instituto Nacional de Vías" .
+
+:canDoTask  a        owl:ObjectProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   dbo:Task .
+
+<compania234>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 13 No. 76-34\r\n" ;
+        :companyName  "Notaria 32 de Bogotá\r" .
+
+<compania149>  a      dbo:Company ;
+        :address      "Estadísticas" , "CAN DANE Carrera 59 No. 26-70" ;
+        :companyName  "Fondo Rotatorio del Departamento Administrativo Nacional de Estadística" .
+
+<compania76>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 35 No. 25 - 57" ;
+        :companyName  "Corporación para El Desarrollo Sostenible del Área de Manejo Especial la Macarena" .
+
+<http://dbpedia.org/ontology/Person/weight>
+        a            owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:float .
+
+dbo:birthName  a     owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania204>  a      dbo:Company ;
+        :address      "Vivienda Ciudad y Territorio" , "Calle 18 No. 7-59" ;
+        :companyName  "Ministerio de Vivienda, Ciudad y Territorio" .
+
+<compania46>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 59  44-48  Sector Autopista Medellín - Bogotá Km 54" ;
+        :companyName  "Corporación Autónoma Regional de Las Cuencas de Los Rios Negro y Nare" .
+
+<compania119>  a      dbo:Company ;
+        :address      "No Aplica" , "Diagonal 22B Nº 52-01 Bloque C" ;
+        :companyName  "Fiscalia General de la Nación" .
+
+:isEmployerOf  a     owl:ObjectProperty ;
+        rdfs:domain  dbo:Company ;
+        rdfs:range   dbo:Person .
+
+<compania180>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Carrera 10 No. 64 - 28" ;
+        :companyName  "Instituto Nacional de Vigilancia de Medicamentos y Alimentos" .
+
+<compania276>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 61A  N° 16-10 Barrio Chapinero\r\n" ;
+        :companyName  "Notaria 71 de Bogotá\r" .
+
+<compania16>  a       dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Transversal 28 A No. 39-29" ;
+        :companyName  "Canal Regional de Televisión Tv Andina Ltda." .
+
+<compania150>  a      dbo:Company ;
+        :address      "Relaciones Exteriores" , "Carrera 5 No. 9 - 03" ;
+        :companyName  "Fondo Rotatorio del Ministerio de Relaciones Exteriores" .
+
+<compania331>  a      dbo:Company ;
+        :address      "Educación" , "Calle  5  No.  4 - 70" ;
+        :companyName  "Universidad del Cauca" .
+
+dbo:sex  a           owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania246>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 85 No. 14-53\r\n" ;
+        :companyName  "Notaria 42 de Bogotá\r" .
+
+dbo:Partner  a       owl:SymmetricProperty , owl:ObjectProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   dbo:Person .
+
+<compania1>  a        dbo:Company ;
+        :address      "Cultura" , "Carrera 6 No. 6-91" ;
+        :companyName  "Archivo General de la Nación" .
+
+<compania88>  a       dbo:Company ;
+        :address      "Inteligencia Estratégica y Contrainteligencia" , "Edificio Torre 26 Calle 26 N°69-63" ;
+        :companyName  "Departamento Administrativo Dirección Nacional de Inteligencia" .
+
+<compania120>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Carrera 43 A # 19-127, Edificio Recife Piso 5 y medio" ;
+        :companyName  "Fogansa S.A. Antes Fondo Ganadero de Antioquia S.A." .
+
+<compania301>  a      dbo:Company ;
+        :address      "Justicia y del Derecho" , "Calle 26 No. 13-49 Interior 201" ;
+        :companyName  "Superintendencia de Notariado y Registro" .
+
+<compania216>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 10 No. 16-22 Sur" ;
+        :companyName  "Notaria 17 de Bogotá" .
+
+<compania58>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 7 No.1A-52" ;
+        :companyName  "Corporación Autónoma Regional del Guavio" .
+
+<compania192>  a      dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 37 No. 8-40" ;
+        :companyName  "Ministerio de Ambiente y Desarrollo Sostenible" .
+
+<compania28>  a       dbo:Company ;
+        :address      "Transporte" , "VACIA" ;
+        :companyName  "Comisión de Regulación de Infraestructura de Transporte" .
+
+<compania288>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Carrera 11 N° 21-108" ;
+        :companyName  "Sanatorio de Agua de Dios, Empresa Social del Estado" .
+
+<compania162>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 3 No.18 - 32" ;
+        :companyName  "Instituto Colombiano de Crédito Educativo y Estudios Técnicos en el Exterior Mariano Ospina Pérez" .
+
+<compania343>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 11 Numero 93a-85" ;
+        :companyName  "Administradora del Monopolio Rentístico de Los Juegos de Suerte y Azar" .
+
+<compania258>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 99 No. 20C-25\r\n" ;
+        :companyName  "Notaria 55 de Bogotá\r" .
+
+<compania132>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Carrera 5 no. 42 07 ofc. 211 CC Sta ines" ;
+        :companyName  "Fondo Ganadero de Boyacá S.A." .
+
+<compania313>  a      dbo:Company ;
+        :address      "Trabajo" , "Carrera 10 No. 15-22" ;
+        :companyName  "Unidad Administrativa Especial de Organizaciones Solidarias" .
+
+:isSkillOf  a        owl:ObjectProperty ;
+        rdfs:domain  dbo:Skill ;
+        rdfs:range   dbo:Person .
+
+<compania228>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera  11 N° 70 - 49" ;
+        :companyName  "Notaria 28 de Bogotá" .
+
+<compania102>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Carrera 13 No. 36 - 24" ;
+        :companyName  "Ecopetrol S.A." .
+
+:       a       owl:Ontology .
+
+<compania174>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 13 No. 7 A - 61 Barrio 20 de Julio" ;
+        :companyName  "Instituto Nacional de Formación Técnica Profesional de San Juan del Cesar" .
+
+dbo:idNumber  a      owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:integer .
+
+<compania71>  a       dbo:Company ;
+        :address      "Defensa" , "Avenida Calle 26 N° 103-08 Entrada 1 Interior 2" ;
+        :companyName  "Corporación de la Industria Aeronáutica Colombiana S.A." .
+
+<compania144>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Carrera 13 N° 28 - 17 Pisos 2, 3, 4 y 5" ;
+        :companyName  "Fondo para El Financiamiento del Sector Agropecuario" .
+
+:needsCompetence  a  owl:ObjectProperty ;
+        rdfs:domain  :jobPosition ;
+        rdfs:range   :Competence .
+
+<compania325>  a      dbo:Company ;
+        :address      "Presidencia de la República" , "CALLE 26 No. 92-32 Edificio GOLD 4 PISO 2" ;
+        :companyName  "Unidad Nacional para la Gestión del Riesgo de Desastres" .
+
+<compania41>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 5 No. 10-125" ;
+        :companyName  "Corporación Autónoma Regional de Chivor" .
+
+<compania114>  a      dbo:Company ;
+        :address      "Educación" , "Calle 13   No.  16-74" ;
+        :companyName  "Escuela Tecnológica Instituto Técnico Central" .
+
+<compania271>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida Calle 72 No. 81 A - 64 \r\n" ;
+        :companyName  "Notaria 67 de Bogotá\r" .
+
+<compania11>  a       dbo:Company ;
+        :address      "Defensa" , "Carrera 10 No. 27 - 27  Int. 137 Piso 2 Edif Bachue" ;
+        :companyName  "Caja de Retiro de Las Fuerzas Militares" .
+
+:hasTask  a            owl:ObjectProperty ;
+        rdfs:domain    :Competence ;
+        rdfs:range     :Task ;
+        owl:inverseOf  :isTaskOf .
+
+dbo:parent  a        owl:ObjectProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   dbo:Person .
+
+<compania186>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Calle 12 sur No. 18 -168" ;
+        :companyName  "Interconexión Eléctrica S.A. E.S.P." .
+
+<compania241>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 119 No. 14 - 26\r\n" ;
+        :companyName  "Notaria 39 de Bogotá\r" .
+
+<compania83>  a       dbo:Company ;
+        :address      "No Aplica" , "Calle 55 10-32" ;
+        :companyName  "Defensoría del Pueblo" .
+
+<compania156>  a      dbo:Company ;
+        :address      "No Aplica" , "VACIA" ;
+        :companyName  "Institución Universitaria Conocimiento e Innovacion para la Justicia" .
+
+dbo:diploma  a       owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania337>  a      dbo:Company ;
+        :address      "Educación" , "Avenida Central del Norte 39-115" ;
+        :companyName  "Universidad Pedagógica y Tecnológica de Colombia" .
+
+<compania211>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 95 No. 11 A - 59 RES. 7312 DEL 02/07/2014\r\n" ;
+        :companyName  "Notaria 12 de Bogotá\r" .
+
+<compania7>  a        dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Carrera 8 No. 15-42 piso 9" ;
+        :companyName  "Banco Agrario de Colombia S.A." .
+
+<compania53>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 66 No. 54 - 43" ;
+        :companyName  "Corporación Autónoma Regional del Atlántico" .
+
+<compania126>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 13 No. 32 - 93 Int. 3 - Parque Residencial Bavaria" ;
+        :companyName  "Fondo de Garantías de Entidades Cooperativas" .
+
+<compania307>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Calle 7ª No. 4 - 49" ;
+        :companyName  "Superintendencia Financiera de Colombia" .
+
+<compania23>  a       dbo:Company ;
+        :address      "Defensa" , "Carrera 50 No. 15-20" ;
+        :companyName  "Club Militar" .
+
+<compania283>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 63 No. 10 - 83 Segundo Piso\r\n" ;
+        :companyName  "Notaria 9 de Bogotá" .
+
+<compania198>  a      dbo:Company ;
+        :address      "Justicia y del Derecho" , "Carrera 9 No. 12C - 10 -" ;
+        :companyName  "Ministerio de Justicia y del derecho" .
+
+dbo:Age  a           owl:FunctionalProperty , owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:integer .
+
+<compania253>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 18 No 28A-51\r\n" ;
+        :companyName  "Notaria 50 de Bogotá\r" .
+
+<compania95>  a       dbo:Company ;
+        :address      "Transporte" , "Calle 24A No. 59-42 Edificio T3 Torre 4 Piso 2" ;
+        :companyName  "Agencia Nacional de Infraestructura" .
+
+<compania168>  a      dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 28 A No.15 - 09" ;
+        :companyName  "Instituto de Investigación de Recursos Biológicos Alexander Von Humboldt" .
+
+<compania223>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 104 N. 14A-70" ;
+        :companyName  "Notaria 22 de Bogotá" .
+
+[ a            owl:AllDisjointClasses ;
+  owl:members  ( dbo:Company dbo:Person dbo:Skill dbo:Task )
+] .
+
+<compania65>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 1 # 22 - 96" ;
+        :companyName  "Corporación Autónoma Regional para El Desarrollo Sostenible del Chocó" .
+
+<compania138>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Kr 2 # 15 - 22 Piso 4 Edificio del BBVA" ;
+        :companyName  "Fondo Ganadero del Magdalena" .
+
+<compania319>  a      dbo:Company ;
+        :address      "Transporte" , "VACIA" ;
+        :companyName  "Unidad de Planeacion de Infraestructura de Transporte" .
+
+<compania295>  a      dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "DIAGONAL 25 G No. 95A - 55" ;
+        :companyName  "Servicios Postales Nacionales S.A." .
+
+<compania35>  a       dbo:Company ;
+        :address      "No Aplica" , "Avenida Calle 26 # 51-50 - Edificio Organización  Electoral - CAN" ;
+        :companyName  "Consejo Nacional Electoral" .
+
+<compania108>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Av. Costa Rica No. 1A - 46" ;
+        :companyName  "Empresa de Energía del Archipielago de San Andres, Providencia y Santa Catalina" .
+
+<compania265>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 13 No. 60-81\r\n" ;
+        :companyName  "Notaria 61 de Bogotá\r" .
+
+<compania320>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Calle 26 N° 69D  91  Piso 9" ;
+        :companyName  "Unidad de Planeación Minero Energética" .
+
+<compania235>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 7  N. 56-99\r\n" ;
+        :companyName  "Notaria 33 de Bogotá\r" .
+
+<compania77>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 26 No. 11- 131 Barrio 5 de Diciembre" ;
+        :companyName  "Corporación para El Desarrollo Sostenible del Norte y Oriente de la Amazonia Cda." .
+
+dbo:livingPlace  a   owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania205>  a      dbo:Company ;
+        :address      "Interior" , "Calle 12 B 8 - 46" ;
+        :companyName  "Ministerio del Interior" .
+
+<compania47>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 29 No.2-43 Edificio Morindó\r\n" ;
+        :companyName  "Corporación Autónoma Regional de Los Valles del Sinu y del San Jorge" .
+
+<compania181>  a      dbo:Company ;
+        :address      "Educación" , "Carrera 13 No 34-91" ;
+        :companyName  "Instituto Nacional para Ciegos" .
+
+dbo:Task  a                  owl:Class ;
+        owl:equivalentClass  :Task .
+
+<compania17>  a       dbo:Company ;
+        :address      "Minas y Energía" , "Cra. 9 No. 76-49 Piso 4" ;
+        :companyName  "Cenit Transporte y Logística de Hidrocarburos" .
+
+<compania277>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 11 N° 71-73 Piso 2\r\n" ;
+        :companyName  "Notaria 72 de Bogotá\r" .
+
+<compania151>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Cra. 55 No. 72-109 Piso 9 Edificio Centro Ejecutivo II" ;
+        :companyName  "Generadora y Comercializadora de Energía del Caribe S.A. E.S.P." .
+
+<compania332>  a      dbo:Company ;
+        :address      "Educación" , "Avenida Simon Bolivar No. 54 A-10 Los Laureles" ;
+        :companyName  "Universidad del Pacifico" .
+
+<compania247>  a      dbo:Company ;
+        :address      "No Aplica" , "calle 109 No. 19-36 local 1\r\n" ;
+        :companyName  "Notaria 43 de Bogotá\r" .
+
+<compania2>  a        dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 74 No. 11-91" ;
+        :companyName  "Artesanías de Colombia S.A." .
+
+<compania89>  a       dbo:Company ;
+        :address      "Estadísticas" , "Carrera 59 No. 26 -70 Interior I - CAN" ;
+        :companyName  "Departamento Administrativo Nacional de Estadística" .
+
+<compania121>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Calle 72 # 7 - 64 PISO 10" ;
+        :companyName  "Fondo Adaptación" .
+
+<compania302>  a      dbo:Company ;
+        :address      "Transporte" , "Calle 63 No 9A-45 piso 2 y 3" ;
+        :companyName  "Superintendencia de Puertos y Transporte" .
+
+<compania217>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 13 No. 27-20" ;
+        :companyName  "Notaria 18 de Bogotá" .
+
+<compania59>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Av. Del Libertador No. 32 - 201" ;
+        :companyName  "Corporación Autónoma Regional del Magdalena" .
+
+dbo:address  a              owl:DatatypeProperty ;
+        rdfs:domain         dbo:Company ;
+        rdfs:range          xsd:string ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+<compania193>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 28 No. 13A - 15" ;
+        :companyName  "Ministerio de Comercio, Industria y Turismo" .
+
+dbo:birthDate  a            owl:DatatypeProperty ;
+        rdfs:domain         dbo:Person ;
+        rdfs:range          xsd:dateTime ;
+        rdfs:subPropertyOf  owl:topDataProperty .
+
+<compania29>  a       dbo:Company ;
+        :address      "No Aplica" , "Carrera 16 No. 96-64  Piso 7o." ;
+        :companyName  "Comisión Nacional del Servicio Civil" .
+
+<compania289>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "Calle 3 No. 2 - 72" ;
+        :companyName  "Sanatorio de Contratación, Empresa Social del Estado" .
+
+<compania90>  a       dbo:Company ;
+        :address      "Inclusión Social y Reconciliación" , "CALLE 7 No. 6-54" ;
+        :companyName  "Departamento Administrativo para la Prosperidad Social" .
+
+<compania163>  a      dbo:Company ;
+        :address      "Educación" , "Calle 17 No. 3 - 40" ;
+        :companyName  "Instituto Colombiano para la Evaluación de la Educación" .
+
+dbo:father  a                     owl:AsymmetricProperty , owl:FunctionalProperty , owl:ObjectProperty ;
+        rdfs:domain               dbo:Person ;
+        rdfs:range                dbo:Person ;
+        rdfs:subPropertyOf        dbo:parent ;
+        owl:propertyDisjointWith  dbo:mother .
+
+<compania259>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 73 No 59-12 Sur L- 221-222\r\n" ;
+        :companyName  "Notaria 56 de Bogotá\r" .
+
+<compania60>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 19N N° 19-55" ;
+        :companyName  "Corporación Autónoma Regional del Quindío" .
+
+<compania133>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "k 36# 53-25" ;
+        :companyName  "Fondo Ganadero del Atlántico" .
+
+<compania314>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 8 No. 6 - 64 Edificio San Agustín" ;
+        :companyName  "Unidad Administrativa Especial Dirección de Impuestos y Aduanas Nacionales" .
+
+<compania290>  a      dbo:Company ;
+        :address      "No Aplica" , "Cr. 5 No. 10-69" ;
+        :companyName  "Senado de la Republica" .
+
+<compania229>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 13 No, 33-42\r\n" ;
+        :companyName  "Notaria 29 de Bogotá" .
+
+<compania30>  a       dbo:Company ;
+        :address      "Presidencia de la República" , "Calle 12 C No 7-19" ;
+        :companyName  "Agencia Colombiana para la Reintegración de Personas y Grupos Alzados en Armas" .
+
+<compania103>  a      dbo:Company ;
+        :address      "Minas y Energía" , "CARRERA 1 No. 35-99 BARRIO EL CUNDUY" ;
+        :companyName  "Electrificadora del Caquetá S.A. E.S.P." .
+
+<compania260>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida Calle 45 A Sur No. 50-47\r\n\r\n" ;
+        :companyName  "Notaria 57 de Bogotá\r" .
+
+<compania175>  a      dbo:Company ;
+        :address      "Educación" , "Avenida Colombia Sarie Bay" ;
+        :companyName  "Instituto Nacional de Formación Técnica Profesional del Departamento de San Andrés, Providencia y Santa Catalina" .
+
+<compania230>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 12b No. 8a-34 Locales 9-10" ;
+        :companyName  "Notaria 3 de Bogotá" .
+
+<compania145>  a      dbo:Company ;
+        :address      "Interior" , "Avenida Jimenez No 8 - 89" ;
+        :companyName  "Fondo para la Participación y El Fortalecimiento de la democracia" .
+
+<compania72>  a       dbo:Company ;
+        :address      "Interior" , "Calle 1AN No 2-39" ;
+        :companyName  "Corporación Nacional para la Reconstrucción de la Cuenca del Río Páez y Zonas Aledañas" .
+
+dbo:birthPlace  a    owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+dbo:employer  a      owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania326>  a      dbo:Company ;
+        :address      "Educación" , "Calle 28 No. 6-02" ;
+        :companyName  "Universidad Colegio Mayor de Cundinamarca" .
+
+dbo:Company  a  owl:Class .
+
+<compania200>  a      dbo:Company ;
+        :address      "Relaciones Exteriores" , "Calle 10 No.5-51 - Palacio de San Carlos" ;
+        :companyName  "Ministerio de Relaciones Exteriores" .
+
+<compania42>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 7 No. 36-45" ;
+        :companyName  "Corporación Autónoma Regional de Cundinamarca" .
+
+<compania115>  a      dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 28 # 13 A 24 Pisos 6°, y 7° Torre B" ;
+        :companyName  "Fiduciaria Colombiana de Comercio Exterior S.A." .
+
+<http://dbpedia.org/ontology/Person/height>
+        a            owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:float .
+
+<compania12>  a       dbo:Company ;
+        :address      "Defensa" , "Carrera 7a  #  13-58" ;
+        :companyName  "Caja de Sueldos de Retiro de la Policía Nacional" .
+
+dbo:Skill  a                 owl:Class ;
+        rdfs:subClassOf      [ a                   owl:Restriction ;
+                               owl:onProperty      :hasTask ;
+                               owl:someValuesFrom  :Task
+                             ] ;
+        owl:equivalentClass  :Competence .
+
+<compania272>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 37 sur No 78 H-33\r\n" ;
+        :companyName  "Notaria 68 de Bogotá\r" .
+
+<compania187>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Carrera 30 No. 10C-280" ;
+        :companyName  "Isagen S.A. E.S.P." .
+
+<compania242>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 8 No.17-30 Piso 3 - 4\r\n" ;
+        :companyName  "Notaria 4 de Bogotá" .
+
+<compania84>  a       dbo:Company ;
+        :address      "Ciencia, Tecnología e innovación" , "Carrera 7 B Bis No. 132 - 28" ;
+        :companyName  "Departamento Administrativo de Ciencia, Tecnología e Innovación" .
+
+<compania157>  a      dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Av Vasquez Cobo entre calle 15 y 16 (Leticia) Calle 20 Numero 5-44 Bogota DC." ;
+        :companyName  "Instituto Amazónico de Investigaciones Científicas" .
+
+:qualityGrade  a     owl:DatatypeProperty ;
+        rdfs:domain  :Task ;
+        rdfs:range   xsd:float .
+
+<compania338>  a      dbo:Company ;
+        :address      "Educación" , "Balneario Hurtado Via a Patillal" ;
+        :companyName  "Universidad Popular del Cesar" .
+
+<compania212>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 13 N. 64 - 39 Interiores 8 y 10\r\n" ;
+        :companyName  "Notaria 13 de Bogotá" .
+
+<compania8>  a        dbo:Company ;
+        :address      "Comercio, Industria y Turismo" , "Calle 28 No. 13A-15 Pisos 37 al 42" ;
+        :companyName  "Banco de Comercio Exterior de Colombia S.A." .
+
+<compania54>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Tranversal 52 Nº 16-190 Barrio El Bosque, Sector Manzanillo" ;
+        :companyName  "Corporación Autónoma Regional del Canal del Dique" .
+
+<compania127>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 7 No. 35 - 40" ;
+        :companyName  "Fondo de Garantías de Instituciónes Financieras" .
+
+<compania308>  a      dbo:Company ;
+        :address      "Salud y Protección Social" , "AVENIDA CIUDAD DE CALI 51-66 PISOS 6 Y 7" ;
+        :companyName  "Superintendencia Nacional de Salud" .
+
+<compania24>  a       dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Transversal 60 # 114- 55" ;
+        :companyName  "Colombia Telecomunicaciones S.A. Esp" .
+
+<compania284>  a      dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Calle 74 Nro. 11-81" ;
+        :companyName  "Parques Nacionales Naturales de Colombia" .
+
+<compania199>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Calle  43 No. 57 - 31 CAN  Horario de Atencion de 7:00am A 4:00pm" ;
+        :companyName  "Ministerio de Minas y Energía" .
+
+<compania254>  a      dbo:Company ;
+        :address      "No Aplica" , "Avenida Calle 80 No. 70 f. 55                                                                                                                                                                \r\n" ;
+        :companyName  "Notaria 51 de Bogotá\r" .
+
+<compania96>  a       dbo:Company ;
+        :address      "Minas y Energía" , "Avenida Calle 26 No. 59-51 Torre 4 Pisos (8, 9 y 10)" ;
+        :companyName  "Agencia Nacional de Minería" .
+
+<compania169>  a      dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 6 No. 37-39 Barrio Huapango\r\n" ;
+        :companyName  "Instituto de Investigaciones Ambientales del Pacífico John Von Neumann" .
+
+<compania224>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 13 N. 27-50 Local 183" ;
+        :companyName  "Notaria 23 de Bogotá" .
+
+<compania139>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Kr 38 No. 26 - 51" ;
+        :companyName  "Fondo Ganadero del Meta" .
+
+:Task   a       owl:Class .
+
+<compania66>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 23 # 37 - 63" ;
+        :companyName  "Corporación Autónoma Regional para la Defensa de la Meseta de Bucaramanga" .
+
+dbo:college  a       owl:DatatypeProperty ;
+        rdfs:domain  dbo:Person ;
+        rdfs:range   xsd:string .
+
+<compania296>  a      dbo:Company ;
+        :address      "Hacienda y Crédito Público" , "Carrera 17 No 93 A - 41 Piso 2" ;
+        :companyName  "Sociedad de Activos Especiales S.A.S." .
+
+<compania36>  a       dbo:Company ;
+        :address      "No Aplica" , "VACIA" ;
+        :companyName  "Consejo Superior de la Judicatura" .
+
+<compania109>  a      dbo:Company ;
+        :address      "Tecnologías de la Información y las Comunicaciones" , "Calle 36 No. 14 - 71" ;
+        :companyName  "Empresa de Telecomunicaciones de Bucaramanga" .
+
+<compania170>  a      dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Cerro Punta Betín" ;
+        :companyName  "Instituto de Investigaciones Marinas y Costeras José Benito Vives de Andréis" .
+
+<compania266>  a      dbo:Company ;
+        :address      "No Aplica" , "Carrera 24 No. 53-26\r\n" ;
+        :companyName  "Notaria 62 de Bogotá\r" .
+
+<compania140>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Calle 31 No. 4d - 46 Barrio Cadis" ;
+        :companyName  "Fondo Ganadero del Tolima" .
+
+<compania321>  a      dbo:Company ;
+        :address      "Agricultura y Desarrollo Rural" , "Calle 35 No 5 - 81" ;
+        :companyName  "Unidad de Planificación de Tierras Rurales, Adecuación de Tierras y Usos Agropecuarios" .
+
+<compania236>  a      dbo:Company ;
+        :address      "No Aplica" , "Calle 118 No. 15-15\r\n" ;
+        :companyName  "Notaria 34 de Bogotá\r" .
+
+<compania78>  a       dbo:Company ;
+        :address      "Ambiente y Desarrollo Sostenible" , "Carrera 17 Nro 14-85 - Barrio La Esmeralda" ;
+        :companyName  "Corporación para El Desarrollo Sostenible del Sur de la Amazonia" .
+
+<compania110>  a      dbo:Company ;
+        :address      "Minas y Energía" , "Carrera 7 N 24 - 76" ;
+        :companyName  "Empresa Distribuidora del Pacífico S.A. E.S.P." .

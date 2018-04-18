@@ -1,0 +1,1 @@
+PREFIX dbc: <http://dbpedia.org/resource/Category:> SELECT DISTINCT ?skill WHERE {  service<http://dbpedia.org/sparql>{   ?skill ?y dbc:Skills .}

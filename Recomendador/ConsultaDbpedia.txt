@@ -1,0 +1,2 @@
+PREFIX dbc: <http://dbpedia.org/resource/Category/> SELECT DISTINCT ?skill WHERE { ?skill ?y dbc:Skills  }
+  

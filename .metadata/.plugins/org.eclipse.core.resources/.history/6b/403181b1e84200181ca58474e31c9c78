@@ -1,0 +1,54 @@
+package llenadoOntologia;
+
+
+
+import virtuoso.jena.driver.*;
+
+import org.apache.jena.query.*;
+import java.io.BufferedReader;
+import java.io.FileOutputStream;
+import java.io.FileReader;
+import java.io.InputStream;
+import java.io.OutputStream;
+
+import org.apache.jena.datatypes.xsd.XSDDatatype;
+import org.apache.jena.ontology.Individual;
+import org.apache.jena.ontology.OntClass;
+import org.apache.jena.ontology.OntModel;
+import org.apache.jena.ontology.OntModelSpec;
+import org.apache.jena.rdf.model.Model;
+import org.apache.jena.rdf.model.ModelFactory;
+import org.apache.jena.rdf.model.Property;
+import org.apache.jena.rdf.model.Resource;
+import org.apache.jena.sparql.core.DatasetImpl;
+import org.apache.jena.util.FileManager;
+import org.apache.jena.vocabulary.RDF;
+public class Example {
+	
+	public static void main(String [] args) {
+
+			String str="Obama";
+			String queryString = "PREFIX pr:<http://xmlns.com/foaf/0.1/>\n" +
+                    "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>\n"+
+                    "SELECT DISTINCT ?s ?label WHERE {" +                              "?s rdfs:label ?label . "+
+                    "?s a pr:Person . "+
+                    "FILTER (lang(?label) = 'en') . "+
+                    "?label bif:contains \""+str+"\" ."+
+                    "}";
+			
+			Query query = QueryFactory.create(queryString);        
+			QueryExecution qexec =         QueryExecutionFactory.sparqlService("http://dbpedia.org/sparql", query);
+			try
+			{
+			ResultSet results = qexec.execSelect();
+			while(results.hasNext()){
+			QuerySolution soln = results.nextSolution();
+			//Literal name = soln.getLiteral("x");
+			System.out.println(soln);
+			  }
+}
+finally{
+qexec.close();
+}
+	}
+}
