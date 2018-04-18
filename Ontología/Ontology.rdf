@@ -1,0 +1,558 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.entrega1/ontologies/"
+     xml:base="http://www.entrega1/ontologies/"
+     xmlns:dbo="http://dbpedia.org/ontology/"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:dbr="http://dbpedia.org/resource/"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:foaf="http://xmlns.com/foaf/spec/">
+    <owl:Ontology rdf:about="http://www.entrega1/ontologies/"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Partner -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/Partner">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/father -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/father">
+        <rdfs:subPropertyOf rdf:resource="http://dbpedia.org/ontology/parent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <owl:propertyDisjointWith rdf:resource="http://dbpedia.org/ontology/mother"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/mother -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/mother">
+        <rdfs:subPropertyOf rdf:resource="http://dbpedia.org/ontology/parent"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AsymmetricProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/parent -->
+
+    <owl:ObjectProperty rdf:about="http://dbpedia.org/ontology/parent">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/canDoTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/canDoTask">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/hasJobPosition -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/hasJobPosition">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <rdfs:range rdf:resource="http://www.entrega1/ontologies/jobPosition"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/hasSkill -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/hasSkill">
+        <owl:inverseOf rdf:resource="http://www.entrega1/ontologies/isSkillOf"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/hasTask -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/hasTask">
+        <owl:inverseOf rdf:resource="http://www.entrega1/ontologies/isTaskOf"/>
+        <rdfs:domain rdf:resource="http://www.entrega1/ontologies/Competence"/>
+        <rdfs:range rdf:resource="http://www.entrega1/ontologies/Task"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/isEmployedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/isEmployedBy">
+        <owl:inverseOf rdf:resource="http://www.entrega1/ontologies/isEmployerOf"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Company"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/isEmployerOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/isEmployerOf">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/isSkillOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/isSkillOf">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Skill"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Person"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/isTaskOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/isTaskOf">
+        <rdfs:domain rdf:resource="http://www.entrega1/ontologies/Task"/>
+        <rdfs:range rdf:resource="http://dbpedia.org/ontology/Skill"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/needsCompetence -->
+
+    <owl:ObjectProperty rdf:about="http://www.entrega1/ontologies/needsCompetence">
+        <rdfs:domain rdf:resource="http://www.entrega1/ontologies/jobPosition"/>
+        <rdfs:range rdf:resource="http://www.entrega1/ontologies/Competence"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Age -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/Age">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/address -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/address">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/almaMater -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/almaMater">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/awardName -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/awardName">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/birthDate -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/birthDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/birthName -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/birthName">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/birthPlace -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/birthPlace"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/bloodGroup -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/bloodGroup"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/bloodType -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/bloodType"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/citizenship -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/citizenship"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/colleague -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/colleague"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/college -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/college"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/deathYear -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/deathYear"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/diploma -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/diploma">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/duration -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/duration">
+        <rdfs:domain rdf:resource="http://www.entrega1/ontologies/Task"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/employer -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/employer"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/ethnicity -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/ethnicity">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/idNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/idNumber"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/livingPlace -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/livingPlace"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/mother -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/mother">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/patent -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/patent">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/salary -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/salary">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+        <owl:propertyDisjointWith rdf:resource="http://dbpedia.org/ontology/sex"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/sex -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/sex">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person/height -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/Person/height">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person/weight -->
+
+    <owl:DatatypeProperty rdf:about="http://dbpedia.org/ontology/Person/weight">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/dc/terms/description -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/dc/terms/description"/>
+    
+
+
+    <!-- http://www.entrega1/ontologies/companyName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.entrega1/ontologies/companyName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/hasSector -->
+
+    <owl:DatatypeProperty rdf:about="http://www.entrega1/ontologies/hasSector">
+        <rdfs:domain rdf:resource="http://dbpedia.org/ontology/Company"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/jobName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.entrega1/ontologies/jobName">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.entrega1/ontologies/jobPosition"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/qualityGrade -->
+
+    <owl:DatatypeProperty rdf:about="http://www.entrega1/ontologies/qualityGrade">
+        <rdfs:domain rdf:resource="http://www.entrega1/ontologies/Task"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.entrega1/ontologies/taskItem -->
+
+    <owl:DatatypeProperty rdf:about="http://www.entrega1/ontologies/taskItem">
+        <rdfs:domain rdf:resource="http://www.entrega1/ontologies/Task"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <owl:propertyDisjointWith rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#label -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#label">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://xmlns.com/foaf/0.1/label -->
+
+    <owl:DatatypeProperty rdf:about="http://xmlns.com/foaf/0.1/label"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://dbpedia.org/ontology/Company -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Company"/>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Person -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.entrega1/ontologies/canDoTask"/>
+                <owl:allValuesFrom rdf:resource="http://dbpedia.org/ontology/Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.entrega1/ontologies/Competence"/>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Skill -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Skill">
+        <owl:equivalentClass rdf:resource="http://www.entrega1/ontologies/Competence"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.entrega1/ontologies/hasTask"/>
+                <owl:someValuesFrom rdf:resource="http://www.entrega1/ontologies/Task"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://dbpedia.org/ontology/Task -->
+
+    <owl:Class rdf:about="http://dbpedia.org/ontology/Task">
+        <owl:equivalentClass rdf:resource="http://www.entrega1/ontologies/Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.entrega1/ontologies/Competence -->
+
+    <owl:Class rdf:about="http://www.entrega1/ontologies/Competence">
+        <owl:disjointWith rdf:resource="http://www.entrega1/ontologies/Task"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.entrega1/ontologies/PersonWithJob -->
+
+    <owl:Class rdf:about="http://www.entrega1/ontologies/PersonWithJob">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+                    <owl:Class>
+                        <owl:complementOf rdf:resource="http://www.entrega1/ontologies/PersonWithoutJob"/>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.entrega1/ontologies/PersonWithoutJob"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.entrega1/ontologies/PersonWithoutJob -->
+
+    <owl:Class rdf:about="http://www.entrega1/ontologies/PersonWithoutJob">
+        <rdfs:subClassOf rdf:resource="http://dbpedia.org/ontology/Person"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.entrega1/ontologies/Task -->
+
+    <owl:Class rdf:about="http://www.entrega1/ontologies/Task"/>
+    
+
+
+    <!-- http://www.entrega1/ontologies/jobPosition -->
+
+    <owl:Class rdf:about="http://www.entrega1/ontologies/jobPosition">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.entrega1/ontologies/needsCompetence"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.entrega1/ontologies/Competence"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Company"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Person"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Skill"/>
+            <rdf:Description rdf:about="http://dbpedia.org/ontology/Task"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

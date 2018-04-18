@@ -1,0 +1,1 @@
+PREFIX ds:<https://www.datos.gov.co/resource/yigb-eqpm/>  SELECT ?municipio ?sector WHERE { ?x ds:municipio ?municipio. ?x ds:sector ?sector }

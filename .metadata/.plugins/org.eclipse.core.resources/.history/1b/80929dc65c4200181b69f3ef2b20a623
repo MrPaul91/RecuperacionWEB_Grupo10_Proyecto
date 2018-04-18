@@ -1,0 +1,33 @@
+package Queries;
+
+import virtuoso.jena.driver.*;
+import org.apache.jena.query.*;
+
+
+public class ConsultasCompany {
+public static void main(String []args){
+	
+		String query1 =  "";
+		
+		VirtGraph set = new VirtGraph("company","jdbc:virtuoso://50.18.123.50:1111","dba","dba");
+		
+		Query sparql = QueryFactory.create();
+			
+				
+	
+	    VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create(sparql, set);
+	    
+	    
+	
+	    ResultSet results = vqe.execSelect();
+	    
+	    while( results.hasNext()){
+	    	QuerySolution soln = results.nextSolution();
+	    	System.out.println(soln.getLiteral("municipio") + "   " + soln.getLiteral("sector"));
+	    	
+	    }
+					
+				
+	}
+
+}

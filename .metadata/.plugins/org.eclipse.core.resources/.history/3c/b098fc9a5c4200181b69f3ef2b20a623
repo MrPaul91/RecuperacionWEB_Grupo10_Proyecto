@@ -1,0 +1,34 @@
+
+import virtuoso.jena.driver.*;
+import org.apache.jena.query.*;
+
+
+public class ConsultasCompany {
+public static void main(String []args){
+		
+		VirtGraph set = new VirtGraph("company","jdbc:virtuoso://50.18.123.50:1111","dba","dba");
+		
+		Query sparql = QueryFactory.create("PREFIX ds:<https://www.datos.gov.co/resource/yigb-eqpm/>"
+			+ " SELECT ?municipio ?sector "
+			+ " WHERE { ?x ds:municipio ?municipio. "
+			+ "         ?x ds:sector ?sector   "
+		    + "    }");
+			
+				
+	
+	    VirtuosoQueryExecution vqe = VirtuosoQueryExecutionFactory.create(sparql, set);
+	    
+	    
+	
+	    ResultSet results = vqe.execSelect();
+	    
+	    while( results.hasNext()){
+	    	QuerySolution soln = results.nextSolution();
+	    	System.out.println(soln.getLiteral("municipio") + "   " + soln.getLiteral("sector"));
+	    	
+	    }
+					
+				
+	}
+
+}

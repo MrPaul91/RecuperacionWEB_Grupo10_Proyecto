@@ -1,0 +1,1 @@
+PREFIX DS:<http://localhost:2020/resource/vocab/>  SELECT ?birthDate ?birthName ?hasEmployment ?jobName ?intervalSalary  WHERE {service<http://50.18.123.50:2020/sparql>{ ?x DS:person_birthDate  ?birthDate;  DS:person_birthName  ?birthName; DS:person_hasEmployment  ?hasEmployment; DS:person_jobName ?jobName; DS:person_RANGO_SALARIAL_EN_SMMLV ?intervalSalary }}

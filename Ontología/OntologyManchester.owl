@@ -1,0 +1,597 @@
+Prefix: : <http://www.entrega1/ontologies/>
+Prefix: dbo: <http://dbpedia.org/ontology/>
+Prefix: dbr: <http://dbpedia.org/resource/>
+Prefix: foaf: <http://xmlns.com/foaf/spec/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.entrega1/ontologies/>
+
+
+Datatype: xsd:dateTime
+
+    
+Datatype: xsd:double
+
+    
+Datatype: xsd:float
+
+    
+Datatype: xsd:integer
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: canDoTask
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        dbo:Task
+    
+    
+ObjectProperty: dbo:Partner
+
+    Characteristics: 
+        Symmetric
+    
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        dbo:Person
+    
+    
+ObjectProperty: dbo:father
+
+    SubPropertyOf: 
+        dbo:parent
+    
+    DisjointWith: 
+        dbo:mother
+    
+    Characteristics: 
+        Functional,
+        Asymmetric
+    
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        dbo:Person
+    
+    
+ObjectProperty: dbo:mother
+
+    SubPropertyOf: 
+        dbo:parent
+    
+    DisjointWith: 
+        dbo:father
+    
+    Characteristics: 
+        Functional,
+        Asymmetric
+    
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        dbo:Person
+    
+    
+ObjectProperty: dbo:parent
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        dbo:Person
+    
+    
+ObjectProperty: hasJobPosition
+
+    Domain: 
+        dbo:Company
+    
+    Range: 
+        jobPosition
+    
+    
+ObjectProperty: hasSkill
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        dbo:Skill
+    
+    InverseOf: 
+        isSkillOf
+    
+    
+ObjectProperty: hasTask
+
+    Domain: 
+        Competence
+    
+    Range: 
+        Task
+    
+    InverseOf: 
+        isTaskOf
+    
+    
+ObjectProperty: isEmployedBy
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        dbo:Company
+    
+    InverseOf: 
+        isEmployerOf
+    
+    
+ObjectProperty: isEmployerOf
+
+    Domain: 
+        dbo:Company
+    
+    Range: 
+        dbo:Person
+    
+    InverseOf: 
+        isEmployedBy
+    
+    
+ObjectProperty: isSkillOf
+
+    Domain: 
+        dbo:Skill
+    
+    Range: 
+        dbo:Person
+    
+    InverseOf: 
+        hasSkill
+    
+    
+ObjectProperty: isTaskOf
+
+    Domain: 
+        Task
+    
+    Range: 
+        dbo:Skill
+    
+    InverseOf: 
+        hasTask
+    
+    
+ObjectProperty: needsCompetence
+
+    Domain: 
+        jobPosition
+    
+    Range: 
+        Competence
+    
+    
+DataProperty: <http://dbpedia.org/ontology/Person/height>
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:float
+    
+    
+DataProperty: <http://dbpedia.org/ontology/Person/weight>
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:float
+    
+    
+DataProperty: <http://purl.org/dc/terms/description>
+
+    Domain: 
+        jobPosition
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: <http://xmlns.com/foaf/0.1/label>
+
+    Domain: 
+        owl:Thing
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: companyName
+
+    Domain: 
+        dbo:Company
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: dbo:Age
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dbo:address
+
+    Domain: 
+        dbo:Company
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: dbo:almaMater
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:awardName
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:birthDate
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:dateTime
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: dbo:birthName
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:birthPlace
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:bloodGroup
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:bloodType
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:citizenship
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:colleague
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:college
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:deathYear
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:dateTime
+    
+    
+DataProperty: dbo:diploma
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:duration
+
+    Domain: 
+        Task
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dbo:employer
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:ethnicity
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: dbo:idNumber
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:integer
+    
+    
+DataProperty: dbo:livingPlace
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:mother
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: dbo:patent
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: dbo:salary
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:double
+    
+    DisjointWith: 
+        dbo:sex
+    
+    
+DataProperty: dbo:sex
+
+    Domain: 
+        dbo:Person
+    
+    Range: 
+        xsd:string
+    
+    DisjointWith: 
+        dbo:salary
+    
+    
+DataProperty: hasSector
+
+    Domain: 
+        dbo:Company
+    
+    Range: 
+        xsd:string
+    
+    
+DataProperty: jobName
+
+    Domain: 
+        jobPosition
+    
+    Range: 
+        xsd:string
+    
+    SubPropertyOf: 
+        owl:topDataProperty
+    
+    
+DataProperty: owl:topDataProperty
+
+    
+DataProperty: qualityGrade
+
+    Domain: 
+        Task
+    
+    Range: 
+        xsd:float
+    
+    
+DataProperty: rdfs:label
+
+    Domain: 
+        owl:Thing
+    
+    DisjointWith: 
+        taskItem
+    
+    
+DataProperty: taskItem
+
+    Domain: 
+        Task
+    
+    Range: 
+        xsd:string
+    
+    DisjointWith: 
+        rdfs:label
+    
+    
+Class: Competence
+
+    EquivalentTo: 
+        dbo:Skill
+    
+    DisjointWith: 
+        dbo:Person, Task
+    
+    
+Class: PersonWithJob
+
+    SubClassOf: 
+        dbo:Person
+         and (not (PersonWithoutJob))
+    
+    DisjointWith: 
+        PersonWithoutJob
+    
+    
+Class: PersonWithoutJob
+
+    SubClassOf: 
+        dbo:Person
+    
+    DisjointWith: 
+        PersonWithJob
+    
+    
+Class: Task
+
+    EquivalentTo: 
+        dbo:Task
+    
+    DisjointWith: 
+        Competence
+    
+    
+Class: dbo:Company
+
+    
+Class: dbo:Person
+
+    SubClassOf: 
+        canDoTask only dbo:Task
+    
+    DisjointWith: 
+        Competence
+    
+    
+Class: dbo:Skill
+
+    EquivalentTo: 
+        Competence
+    
+    SubClassOf: 
+        hasTask some Task
+    
+    
+Class: dbo:Task
+
+    EquivalentTo: 
+        Task
+    
+    
+Class: jobPosition
+
+    SubClassOf: 
+        needsCompetence min 1 Competence
+    
+    
+Class: owl:Thing
+
+    
+DisjointClasses: 
+    dbo:Company,dbo:Person,dbo:Skill,dbo:Task
+
