@@ -256,7 +256,7 @@ public static void main(String []args) throws Exception{
 	
 	   model.write(ActualizacionOntologia,"TURTLE");
 	     
-	   //zSystem.out.println("Entro");	
+	   System.out.println("Entro");	
 	}
 
 
