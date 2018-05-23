@@ -6,5 +6,7 @@ https://www.datos.gov.co/Funci-n-p-blica/Lista-entidades-p-blicas-de-orden-nacio
 
 https://www.datos.gov.co/Mapas-Nacionales/Mercado-laboral-ocupaci-n-por-nivel-educativo/dwfg-8k4j/data
 
+https://www.datos.gov.co/Salud-y-Protecci-n-Social/Ofertas-en-reas-de-inter-s-para-personas-con-disca/taqc-55yq/data
+
 
 http://www.ag-nbi.de/conf/SEBIZ06/SEBIZ06-Wache.pdf
